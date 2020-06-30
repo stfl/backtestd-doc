@@ -125,7 +125,7 @@ The buffers refer to the index or indices of the internal buffer of the indicato
 For example ash has 7 internal buffers which is uses to for temporary values.
 
 ``` c++
-SetIndexBuffer(0,BufferASH,INDICATOR_DATA);
+SetIndexBuffer(0,BufferASH,INDICATOR_DATA);                  // <-- we are interested in this value 
 SetIndexBuffer(1,BufferColors,INDICATOR_COLOR_INDEX);
 SetIndexBuffer(2,BufferBL,INDICATOR_CALCULATIONS);
 SetIndexBuffer(3,BufferBR,INDICATOR_CALCULATIONS);
