@@ -82,7 +82,17 @@ Each indicator has a number of input parameters
 
 ![ash_inputs](img/ash_inputs.png)
 
-In the yaml file the inputs are structured as follows:
+These Inputs are defined in the source of the indicator
+
+``` c++
+input uint                 InpPeriod         =  9;             // Period
+input uint                 InpPeriodSm       =  2;             // Smoothing
+input ENUM_MODE            InpMode           =  MODE_RSI;      // Mode
+input ENUM_MA_METHOD       InpMethod         =  MODE_SMA;      // Method
+input ENUM_APPLIED_PRICE   InpAppliedPrice   =  PRICE_CLOSE;   // Applied price
+```
+
+In the yaml file the inputs are structured as follows and in this case define the `InpPeriod` from ASH with default value of 9. For the optimization process values starting at 4 until 20 are considered with a stepping of 1.
 
 ``` yaml
     - - 9.0    # default value
@@ -94,15 +104,6 @@ In the yaml file the inputs are structured as follows:
 The indicators are structured as a 2D array `[[], [], ..]`
 The first `-` indicates the index in the outer array, and the 4x `-` define the value and ranges of the input.
 
-These Inputs are defined in the source of the indicator
-
-``` c++
-input uint                 InpPeriod         =  9;             // Period
-input uint                 InpPeriodSm       =  2;             // Smoothing
-input ENUM_MODE            InpMode           =  MODE_RSI;      // Mode
-input ENUM_MA_METHOD       InpMethod         =  MODE_SMA;      // Method
-input ENUM_APPLIED_PRICE   InpAppliedPrice   =  PRICE_CLOSE;   // Applied price
-```
 
 In order to get the inputs into the yaml file I usually copy the inputs from the mq5 file, comment them out in the yaml file and add the inputs definition in between.
 
@@ -110,9 +111,11 @@ In order to get the inputs into the yaml file I usually copy the inputs from the
 
 Enum types can be used as integer values. For example `ENUM_APPLIED_PRICE` has possible values 0 - 6.
 
-[ENUM_TIMEFRAMES](https://www.mql5.com/en/docs/constants/chartconstants/enum_timeframes) 0 - 21 (Typically 0 = *CURRENT*)
-[ENUM_APPLIED_PRICE](https://www.mql5.com/en/docs/constants/indicatorconstants/prices) 0 - 6
-[ENUM_MA_METHOD](https://www.mql5.com/en/docs/constants/indicatorconstants/enum_ma_method) 0 - 6
+| typical enum | values |
+|--|--|
+| [ENUM_TIMEFRAMES](https://www.mql5.com/en/docs/constants/chartconstants/enum_timeframes) | 0 - 21 (Typically 0 = *CURRENT*) |
+| [ENUM_APPLIED_PRICE](https://www.mql5.com/en/docs/constants/indicatorconstants/prices) | 0 - 6 |
+| [ENUM_MA_METHOD](https://www.mql5.com/en/docs/constants/indicatorconstants/enum_ma_method) | 0 - 6 |
 
 Other enums like `ENUM_MODE` are typically defined in the code
 
