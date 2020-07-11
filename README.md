@@ -8,7 +8,7 @@
 
 |Local Folder | MEGA Folder | Purpose |
 | -- | -- | -- |
-| `/home/stefan/work/backtestd/config` | `/nnfx/config` | Configuration defining the Indicators and Test Runs |
+<!-- | `/home/stefan/work/backtestd/config` | `/nnfx/config` | Configuration defining the Indicators and Test Runs | -->
 | `/home/stefan/work/nnfx/reports` | `/nnfx/reports/{Stefan}` | Test Run results | 
 | `/home/stefan/.wine/drive_c/Program Files/MetaTrader 5/MQL5/Indicators` | `/nnfx/Indicators`| MT5 Indicators |
 
