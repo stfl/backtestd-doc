@@ -1,0 +1,81 @@
+{
+  "main": {
+    "id": "dd89c0793637217a",
+    "type": "split",
+    "children": [
+      {
+        "id": "89de12f28d063587",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Overview.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "78534a24ab9dcda0",
+    "type": "split",
+    "children": [
+      {
+        "id": "e3a0846938a30921",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "95f3ca2570def0db",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "83a856b9b800f922",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4da6fe4bbd83cc9a",
+    "type": "split",
+    "children": [
+      {
+        "id": "e6e76e0e0552c457",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4e5e81d238e6ca03",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "Overview.md",
+    "Metrics/Avg. Profit per Trade.md",
+    "Metrics/Double Hit Ratio.md",
+    "NNFX Algo/Average True Range (ATR).md",
+    "index.md"
+  ]
+}

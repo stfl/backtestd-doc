@@ -1,0 +1,2 @@
+# Exit Indicator
+Abbreviation: **E**

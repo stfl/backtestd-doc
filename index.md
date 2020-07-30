@@ -8,7 +8,6 @@
 
 |Local Folder | MEGA Folder | Purpose |
 | -- | -- | -- |
-<!-- | `/home/stefan/work/backtestd/config` | `/nnfx/config` | Configuration defining the Indicators and Test Runs | -->
 | `/home/stefan/work/nnfx/reports` | `/nnfx/reports/{Stefan}` | Test Run results | 
 | `/home/stefan/.wine/drive_c/Program Files/MetaTrader 5/MQL5/Indicators` | `/nnfx/Indicators`| MT5 Indicators |
 
@@ -80,7 +79,7 @@ shift: 0
 
 Each indicator has a number of input parameters
 
-![ash_inputs](img/ash_inputs.png)
+![ash_inputs](files/ash_inputs.png)
 
 These Inputs are defined in the source of the indicator
 
