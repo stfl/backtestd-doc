@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "89de12f28d063587",
+        "id": "e32c735a5f9c4c7e",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Overview.md",
+            "file": "Optimization Procedure/Optimization Procedure.md",
             "mode": "source"
           }
         }
@@ -72,10 +72,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "Overview.md",
-    "Metrics/Avg. Profit per Trade.md",
-    "Metrics/Double Hit Ratio.md",
-    "NNFX Algo/Average True Range (ATR).md",
-    "index.md"
+    "Optimization Procedure/Optimization Procedure.md",
+    "Optimization Procedure/Indicator Selection.md",
+    "Optimization Procedure/Reducing the result set.md",
+    "Optimization Procedure/Strategy Testing in MT5 (Performance Considerations).md",
+    "Optimization Procedure/Testing New Indicators.md"
   ]
 }
