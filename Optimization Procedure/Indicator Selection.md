@@ -1,0 +1,2 @@
+# Indicator Selection
+Indicator selection describes the procedure and criteria of selecting multiple [[Sliced Indicator Set]]s from a pool of available configurations for the [[Combination of Indicators]] and further testing.
