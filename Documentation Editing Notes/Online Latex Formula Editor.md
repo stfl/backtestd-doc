@@ -1,1 +1,0 @@
-[Online LaTeX Equation Editor - create, integrate and download](https://www.codecogs.com/latex/eqneditor.php)

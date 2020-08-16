@@ -1,0 +1,16 @@
+* Indicator Function
+  :PROPERTIES:
+  :CUSTOM_ID: indicator-function
+  :END:
+
+The indicator function or simply function (func) defines the purpose of
+an [[file:Indicator.org]] within an [[file:Indicator Set.org]].
+
+Possible functions are
+
+- [[file:../NNFX Algo/Confirmation Indicator.org]]
+- [[file:../NNFX Algo/2nd Confirmation Indicator (C2).org]]
+- [[file:../NNFX Algo/Volume Volatility Indicator (V).org]]
+- [[file:../NNFX Algo/Baseline Indicator.org]]
+- [[file:../NNFX Algo/Exit Indicator.org]]
+- [[file:../NNFX Algo/Continuation Indicator.org]]

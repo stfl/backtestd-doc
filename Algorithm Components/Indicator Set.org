@@ -1,0 +1,7 @@
+* Indicator Set
+  :PROPERTIES:
+  :CUSTOM_ID: indicator-set
+  :END:
+
+An indicator set (indi set) is a set of [[file:Indicator]]s used in an
+[[file:Algorithm]]. Each indicator has a specific [[file:Indicator Function]].

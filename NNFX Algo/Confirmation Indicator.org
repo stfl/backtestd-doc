@@ -1,0 +1,4 @@
+* Confirmation
+  :PROPERTIES:
+  :CUSTOM_ID: confirmation
+  :END:

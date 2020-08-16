@@ -1,0 +1,18 @@
+When backtesting indicators or indicator sets there is a significant
+likelihood of [[https://en.wikipedia.org/wiki/Curve_fitting][curve
+fitting]] which gives good results for the specific backtested period
+but would not give good results in forward testing. This is also called
+over-optimization.
+
+** Filtering Over-Optimization
+   :PROPERTIES:
+   :CUSTOM_ID: filtering-over-optimization
+   :END:
+
+[[file:Parameter Optimization.org]] describes that if a continuous input [[file:../Algorithm Components/Input Parameters.org]] value changes the result value should change proportionally
+to the input change.
+
+*The assumtion - based on [[file:Parameter Optimization.org]] - is that if a
+continuous input changes by a single step but the result changes
+significantly the results are caused by curve fitting and can be
+filtered out.*

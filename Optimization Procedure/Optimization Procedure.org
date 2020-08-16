@@ -1,0 +1,35 @@
+* Optimization Procedure
+  :PROPERTIES:
+  :CUSTOM_ID: optimization-procedure
+  :END:
+
+The optimization procedure in this system defines the process of finding
+a profitable configuration for the system according to the given
+[[file:../NNFX Algo/Algorithm Rules.org]].
+
+** Backtesting in Metatrader 5
+   :PROPERTIES:
+   :CUSTOM_ID: backtesting-in-metatrader-5
+   :END:
+
+TODO
+
+** New Indicators
+   :PROPERTIES:
+   :CUSTOM_ID: new-indicators
+   :END:
+
+The optimization starts with [[file:Adding New Indicators.org]] and [[file:Testing New
+Indicators.org]]. In order to optimize the data set for further processing
+we [[file:Analyzing Results.org][analyze the results]] for [[file:Reducing the result
+set.org]]. The resulting configuration is referred to as [[Sliced Indicator
+Set.org]].
+
+** Continuous Optimization
+   :PROPERTIES:
+   :CUSTOM_ID: continuous-optimization
+   :END:
+
+The previously gathered sliced indi set configs are then [[Combination
+of Indicators|combined with other sliced indi sets.org]] by using various
+[[file:Indicator Selection.org]] precedures.

@@ -1,0 +1,61 @@
+* Windows 10 (VM) Setup
+  :PROPERTIES:
+  :CUSTOM_ID: windows-10-vm-setup
+  :END:
+
+https://davejansen.com/recommended-settings-windows-10-2016-2018-2019-vm-proxmox/
+
+** Drivers
+   :PROPERTIES:
+   :CUSTOM_ID: drivers
+   :END:
+
+#+CAPTION: win10hw
+[[file:../files/pve-win10-hw.png]]
+
+Win10 Disk needs to be SCSI
+
+Virtio driver Disk from RedHat
+
+[[https://www.spice-space.org/download.html][Spice Agent and Drivers]]
+
+*TODO* Launch ballooning ...
+
+** MetaTrader 5
+   :PROPERTIES:
+   :CUSTOM_ID: metatrader-5
+   :END:
+
+Setup MetaTester agents for all (64) cores
+
+** MEGA
+   :PROPERTIES:
+   :CUSTOM_ID: mega
+   :END:
+
+https://mega.nz/sync
+
+** Samba
+   :PROPERTIES:
+   :CUSTOM_ID: samba
+   :END:
+
+Enable Network Share for Metrtrader5 Terminal dir.
+
+** Other stuff
+   :PROPERTIES:
+   :CUSTOM_ID: other-stuff
+   :END:
+
+disable sleep otherwise the VM will go to sleep after 30min :P
+
+* Benchmarking Win 10 VM disk performance
+  :PROPERTIES:
+  :CUSTOM_ID: benchmarking-win-10-vm-disk-performance
+  :END:
+
+https://bsdio.com/fio/
+
+#+BEGIN_SRC sh
+    fio.exe --time_based --name=benchmark --size=5000M --runtime=30 --ioengine=windowsaio --numjobs=8 --iodepth=8 --rw=randwrite --blocksize=4k --group_reporting --direct=1
+#+END_SRC

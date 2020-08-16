@@ -1,0 +1,9 @@
+* Indicator Selection
+  :PROPERTIES:
+  :CUSTOM_ID: indicator-selection
+  :END:
+
+Indicator selection describes the procedure and criteria of selecting
+multiple [[file:../Algorithm Components/Sliced Indicator Set.org]]s from a pool of available
+configurations for the [[file:Combination of Indicators.org]] and further
+testing.

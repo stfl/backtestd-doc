@@ -1,0 +1,15 @@
+* Average True Range (ATR)
+  :PROPERTIES:
+  :CUSTOM_ID: average-true-range-atr
+  :END:
+
+The ATR is a very important indicator in this system that is used -
+amongst other functions - for money management.
+
+[[http://www.youtube.com/watch?v=086ozcHDZPw][[[http://img.youtube.com/vi/086ozcHDZPw/0.jpg]]]]
+
+The ATR is the only pre-defined indicator in the NNFX algo.
+
+Some sort of
+[[https://en.wikipedia.org/wiki/Standard_deviation][Standard deviation]]
+could also be used

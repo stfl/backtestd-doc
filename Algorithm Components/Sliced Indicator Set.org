@@ -1,0 +1,8 @@
+* Sliced Indicator Set
+  :PROPERTIES:
+  :CUSTOM_ID: sliced-indicator-set
+  :END:
+
+also called segmented
+
+The output from [[file:../Optimization Procedure/Analyzing Results.org][the Analyzing Results]] stage that [[file:~/work/backtestd-doc/Optimization Procedure/Reducing the result set.org][reduces the sult set]]

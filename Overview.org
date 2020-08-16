@@ -1,0 +1,26 @@
+* No Nonsense Forex
+  :PROPERTIES:
+  :CUSTOM_ID: no-nonsense-forex
+  :END:
+
+This system is based on the strategy and [[file:Algorithm Rules.org]] described
+by [[file:VP]].
+
+* Algorithm Components
+  :PROPERTIES:
+  :CUSTOM_ID: algorithm-components
+  :END:
+
+In order to understand the semantics used in this system the directory
+*Algorithm Components* gives an overview - starting at [[file:Algorithm]] -
+and describes certain anspects related to the implementation in
+Metatrader 5.
+
+* Optimization Procedure
+  :PROPERTIES:
+  :CUSTOM_ID: optimization-procedure
+  :END:
+
+The [[[#optimization-procedure][Optimization Procedure]]] describes the
+entire process - mixed with concrete instructions - to automatically
+find a profitable configuration for the NNFX algo setup.

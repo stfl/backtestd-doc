@@ -1,0 +1,7 @@
+* Algorithm
+  :PROPERTIES:
+  :CUSTOM_ID: algorithm
+  :END:
+
+An algorithm in this system defines the rules on how to combine the
+[[file:Signal.org][Signals]] form various [[file:Indicator.org][Indicators]].

@@ -1,0 +1,6 @@
+* Exit Indicator
+  :PROPERTIES:
+  :CUSTOM_ID: exit-indicator
+  :END:
+
+Abbreviation: *E*

@@ -1,0 +1,17 @@
+* Metrics
+  :PROPERTIES:
+  :CUSTOM_ID: metrics
+  :END:
+
+A metric or also called a fitness function in this system describes a
+function to evaluate the performance of an [[file:../Algorithm Components/Indicator.org]] or and
+[[file:../Algorithm Components/Indicator Set.org]].
+
+Metrics:
+
+- [[file:Hit Miss Ratio.org]]
+- [[file:Double Hit Ratio.org]]
+- [[file:Return of Investment.org]]
+- [[file:Profit Factor.org]]
+- [[file:Avg. Profit per Trade.org]]
+- [[file:K-Ratio.org]]
