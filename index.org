@@ -180,7 +180,7 @@ For indicators of the TwoLinesCross class two buffers need to be
 inserted. For example the Ultra Trend indicator (ut) uses buffers 2 and
 4 for the up and the down line.
 
-#+BEGIN_EXAMPLE
+#+BEGIN_EXAMPLE yaml
     buffers:
       - 2
       - 4
