@@ -1,7 +1,8 @@
 * Signal
   :PROPERTIES:
   :CUSTOM_ID: signal
+  :ID:       58e26471-da3c-47a1-a4a3-f6ce70bbf744
   :END:
 
-A signal is the event produces by an [[file:Indicator.org]] that indicates
+A signal is the event produces by an [[file:Indicator.org][Indicator]] that indicates
 entering or exiting a trade.

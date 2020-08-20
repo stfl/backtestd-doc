@@ -3,6 +3,8 @@
   :CUSTOM_ID: sliced-indicator-set
   :END:
 
-also called segmented
+also called segmented.
 
-The output from [[file:../Optimization Procedure/Analyzing Results.org][the Analyzing Results]] stage that [[file:~/work/backtestd-doc/Optimization Procedure/Reducing the result set.org][reduces the sult set]]
+The output of [[file:../Optimization Procedure/Analyzing Results.org][the analyzing results]] stage that [[file:~/work/backtestd-doc/Optimization Procedure/Reducing the result set.org][reduces the result set]].
+
+A sliced indicator set has ranged [[file:Input Parameters.org][input parameters]] because working with ranged inputs is significantly more efficient than with

@@ -1,0 +1,12 @@
+#+title: Side
+
+* Indicator Side
+
+At any given time an [[file:Algorithm Components/Indicator.org][indicator]] has a side that indicates *long, short or
+neutral*.
+
+Typically if the last signal was a long [[file:Algorithm Components/Signal.org][signal]] the side of this indicator is
+long until the indicator gives a signal in the oposite direction. Same for short
+signals.
+
+Some indicators also describe a neutral state.

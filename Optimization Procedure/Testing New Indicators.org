@@ -4,7 +4,7 @@
   :END:
 
 After a new indicator is defined in the system it shall be tested.
-Testing means calculating the fitness function (metric) for each input
+Testing means calculating the fitness function ([[file:../Metrics/Metrics.org][metric]]) for each input
 parameter set.
 
 The current implementation plan is to process all possible input
@@ -12,7 +12,7 @@ parameters. This has $O(n^m)$. $n$ possible values per input. $m$
 different free inputs.
 
 If an indicator has 10k input parameter and it is combined with another
-indicator of also 10k inputs the resulting search space is 10k\^2 = 100M
+indicator of also 10k inputs the resulting search space is $10k^2 = 100M$
 
 This shows that size of the search space also increases by $O(m^p)$
 which overall results in $O(n^{m \cdot p})$ where $p$ is the number of

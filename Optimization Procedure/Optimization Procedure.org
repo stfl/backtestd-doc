@@ -3,33 +3,49 @@
   :CUSTOM_ID: optimization-procedure
   :END:
 
-The optimization procedure in this system defines the process of finding
-a profitable configuration for the system according to the given
-[[file:../NNFX Algo/Algorithm Rules.org]].
 
-** Backtesting in Metatrader 5
+The optimization procedure in this system defines the process of finding a
+profitable configuration for the system according to the given [[file:~/work/backtestd-doc/NNFX Algo/Algorithm Rules.org][algortihm rules]].
+
+** TODO Backtesting in Metatrader 5
    :PROPERTIES:
    :CUSTOM_ID: backtesting-in-metatrader-5
    :END:
-
-TODO
 
 ** New Indicators
    :PROPERTIES:
    :CUSTOM_ID: new-indicators
    :END:
 
-The optimization starts with [[file:Adding New Indicators.org]] and [[file:Testing New
-Indicators.org]]. In order to optimize the data set for further processing
-we [[file:Analyzing Results.org][analyze the results]] for [[file:Reducing the result
-set.org]]. The resulting configuration is referred to as [[Sliced Indicator
-Set.org]].
+The optimization starts with [[file:Adding New Indicators.org][adding]] and [[file:Testing New Indicators.org][testing new indicators]] to calculate the
+[[file:../Metrics/Metrics.org][metric]] for a range of [[file:../Algorithm Components/Input Parameters.org][Input Parameters]]. In order to filter [[file:Reducing the result set.org][(reduce)]] the result
+for further processing we [[file:Analyzing Results.org][analyze the results]]. The resulting configurations is
+referred to as [[file:../Algorithm Components/Sliced Indicator Set.org][Sliced Indicator Set]].
 
 ** Continuous Optimization
    :PROPERTIES:
    :CUSTOM_ID: continuous-optimization
+   :ID:       7d0e8e60-c1a6-49d0-9744-9e6804e50d54
    :END:
 
-The previously gathered sliced indi set configs are then [[Combination
-of Indicators|combined with other sliced indi sets.org]] by using various
-[[file:Indicator Selection.org]] precedures.
+From the previously gathered sliced indi set configs multiple candidates are [[file:Indicator
+  Selection.org][selected]] - based on a [[file:../Metrics/Metrics.org][metric]] - and [[file:Combination of Indicators.org::#combining][combined]] to breed a new indi set for further
+ backtesting. This process runs automatically and is based on principales of a
+ [[https://en.wikipedia.org/wiki/Genetic_algorithm][genetic algorithm]]. Progressively the the number of assigned functions in the
+ indi set will grow until all functions are assigned.
+
+** Forward Testing
+:PROPERTIES:
+:ID:       0f4878ef-4a89-43ed-b96e-1cb966911e63
+:END:
+
+After we find a suitable indicator set with all functions assigned we select a
+[[id:5bf1effb-a386-4026-be5f-4df3f0c21c13][Concrete Indicator Set]] and forward test the configuration for a certain period of time
+until we are conviced that the configuration is acceptable.
+Forward testing is performed on a demo account of a broker of choice.
+
+** Building a Track Record
+
+In order to monetize the signals from the algorithm it is important to generate
+a record of actual trades either on a demo account or a real-money account. The
+results from forward testing may be used as track record as well.

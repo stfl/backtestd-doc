@@ -1,16 +1,20 @@
-usually only called an *input*
+* Input Parameters
 
+usually referred to as *input*.
+
+* Types of Input Parameters
 An MT5 Indicator may have different types of inputs
 
 - Integer
 - Float
 - String
-- Boolean
+- Boolean (Bool)
 - Enumerations (Enum)
 
 ** Continuous Input
    :PROPERTIES:
    :CUSTOM_ID: continuous-input
+   :ID:       f7cabdf4-ee40-4312-8a18-c9fa8bd33c01
    :END:
 
 An input is continuous if an adjacent input value only slightly changes
@@ -18,7 +22,7 @@ the function of an indicator.
 
 Adjacent input values result in a continuous result space.
 
-Typically Integer and Float inputs are continuous.
+Typically *Integer* and *Float* inputs are continuous.
 
 An example would be the the period of an moving average.
 
@@ -31,4 +35,34 @@ If a distinct input value changes slightly, the function of the
 indicator changes significantly. Adjacent input values result in
 distinct results spaces.
 
-Typically bool and enum inputs are distinct.
+Typically *Bool* and *Enum* inputs are distinct.
+
+* Input Parameter ranges
+
+** Ranged Inputs
+
+An input parameter is *ranged* if a range of possible values is defined.
+This is defined with ~[default, start, stop, step]~ values in indicator description.
+
+** Concrete Inputs
+
+An input is concrete if only a single, fixed value is possible.
+
+** Ranged Indicator Set
+
+- An [[file:Indicator.org][indicator]] is considered ranged if *any* of the inputs is ranged.
+- An [[file:Indicator Set.org][indicator set]] is ranged if *any* of the indicators in the set is ranged.
+ 
+When [[file:../Optimization Procedure/Adding New Indicators.org][adding a new indicator]] or a [[file:Sliced Indicator Set.org][sliced indicator set]] may have ranged inputs.
+
+Continuous as well as distinct inputs may be ranged. In the case of distinct
+inputs, the range is not logically coherent. This is sensible for defining a
+wide range of inputs when adding a new indicator.
+
+** Concrete Indicator Set
+
+- An [[file:Indicator.org][indicator]] is considered concrete if *all* of the inputs are concrete.
+- An [[file:Indicator Set.org][indicator set]] is concrete if *all* of the indicators in the set are concrete.
+
+The result of the optimization procedure is always a concrete indicator set
+which can be instantiated for forward testing and actual trading.

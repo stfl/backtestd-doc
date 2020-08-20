@@ -1,0 +1,5 @@
+#+title: Take Profit
+
+https://www.babypips.com/forexpedia/take-profit
+
+In this system, a take profit {TP} is set at $Entry + ATR$ [fn::for long trades and Entry - ATR for short trades]

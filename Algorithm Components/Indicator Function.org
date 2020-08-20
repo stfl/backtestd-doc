@@ -3,14 +3,16 @@
   :CUSTOM_ID: indicator-function
   :END:
 
-The indicator function or simply function (func) defines the purpose of
-an [[file:Indicator.org]] within an [[file:Indicator Set.org]].
+The indicator function or simply function (/func/) defines the purpose of
+an [[file:Indicator.org][indicator]] within an [[file:Indicator Set.org][indicator set]].
 
-Possible functions are
+An indicator contains indicators with the following functions:
 
-- [[file:../NNFX Algo/Confirmation Indicator.org]]
-- [[file:../NNFX Algo/2nd Confirmation Indicator (C2).org]]
-- [[file:../NNFX Algo/Volume Volatility Indicator (V).org]]
-- [[file:../NNFX Algo/Baseline Indicator.org]]
-- [[file:../NNFX Algo/Exit Indicator.org]]
-- [[file:../NNFX Algo/Continuation Indicator.org]]
+- [[file:~/work/backtestd-doc/NNFX Algo/Confirmation Indicator.org][Confirmation]] (C1)
+- [[file:~/work/backtestd-doc/NNFX Algo/2nd Confirmation Indicator (C2).org][2nd Confirmation]] (C2)
+- 3rd Confirmation (C3)
+- [[file:~/work/backtestd-doc/NNFX Algo/Volume Volatility Indicator (V).org][Volume or Volatility Indicator]] (V)
+- [[file:~/work/backtestd-doc/NNFX Algo/Baseline Indicator.org][Baseline]] (B)
+- [[file:~/work/backtestd-doc/NNFX Algo/Exit Indicator.org][Exit]] (E)
+- [[file:~/work/backtestd-doc/NNFX Algo/Continuation Indicator.org][Continuation]] (Ct)
+- [[file:../Indicators/Average True Range (ATR).org][Average True Range (ATR)]]

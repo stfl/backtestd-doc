@@ -1,0 +1,5 @@
+#+title: Standard Deviation
+
+Instead of the ATR [[https://en.wikipedia.org/wiki/Standard_deviation][Standard deviation]] could also be used for money / risk management.
+
+* TODO there was a post describing the similarities of the ATR and standard deviation.

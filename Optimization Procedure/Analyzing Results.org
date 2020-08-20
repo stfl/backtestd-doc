@@ -1,7 +1,8 @@
-When backtesting indicators or indicator sets there is a significant
-likelihood of [[https://en.wikipedia.org/wiki/Curve_fitting][curve
-fitting]] which gives good results for the specific backtested period
-but would not give good results in forward testing. This is also called
+* Analyzing Results
+
+When backtesting indicators or indicator sets there is a significant likelihood
+of [[https://en.wikipedia.org/wiki/Curve_fitting][curve fitting]] which gives good results for the specific backtested period but
+would not give good results in forward testing. This is also called
 over-optimization.
 
 ** Filtering Over-Optimization
@@ -9,10 +10,13 @@ over-optimization.
    :CUSTOM_ID: filtering-over-optimization
    :END:
 
-[[file:Parameter Optimization.org]] describes that if a continuous input [[file:../Algorithm Components/Input Parameters.org]] value changes the result value should change proportionally
-to the input change.
+[[file:Parameter Optimization.org][Parameter Optimization]] describes that if the value of a [[file:~/work/backtestd-doc/Algorithm Components/Input Parameters.org::#continuous-input][Continuous Input]] changes,
+the result value must change proportionally to the input change.
 
-*The assumtion - based on [[file:Parameter Optimization.org]] - is that if a
-continuous input changes by a single step but the result changes
-significantly the results are caused by curve fitting and can be
-filtered out.*
+*** Assumtion:
+based on [[file:Parameter Optimization.org][Parameter Optimization]]
+
+If the value of a continuous input changes by a single step but the result
+changes significantly, the results can be considered random and must be filtered.
+
+/What is significant?/

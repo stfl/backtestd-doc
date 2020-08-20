@@ -4,8 +4,7 @@
   :END:
 
 A metric or also called a fitness function in this system describes a
-function to evaluate the performance of an [[file:../Algorithm Components/Indicator.org]] or and
-[[file:../Algorithm Components/Indicator Set.org]].
+function to evaluate the performance of an [[file:../Algorithm Components/Indicator.org][indicator]] or an [[file:../Algorithm Components/Indicator Set.org][Indicator Set]].
 
 Metrics:
 
