@@ -60,6 +60,9 @@ inputs, the range is not logically coherent. This is sensible for defining a
 wide range of inputs when adding a new indicator.
 
 ** Concrete Indicator Set
+:PROPERTIES:
+:ID:       5bf1effb-a386-4026-be5f-4df3f0c21c13
+:END:
 
 - An [[file:Indicator.org][indicator]] is considered concrete if *all* of the inputs are concrete.
 - An [[file:Indicator Set.org][indicator set]] is concrete if *all* of the indicators in the set are concrete.

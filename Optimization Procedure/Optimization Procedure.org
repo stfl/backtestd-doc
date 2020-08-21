@@ -28,11 +28,13 @@ referred to as [[file:../Algorithm Components/Sliced Indicator Set.org][Sliced I
    :ID:       7d0e8e60-c1a6-49d0-9744-9e6804e50d54
    :END:
 
-From the previously gathered sliced indi set configs multiple candidates are [[file:Indicator
-  Selection.org][selected]] - based on a [[file:../Metrics/Metrics.org][metric]] - and [[file:Combination of Indicators.org::#combining][combined]] to breed a new indi set for further
- backtesting. This process runs automatically and is based on principales of a
- [[https://en.wikipedia.org/wiki/Genetic_algorithm][genetic algorithm]]. Progressively the the number of assigned functions in the
- indi set will grow until all functions are assigned.
+From the previously gathered sliced indi set configs multiple candidates are
+  [[file:Indicator Selection.org][selected]] - based on a
+  [[file:../Metrics/Metrics.org][metric]] - and [[file:Combination of Indicators.org::#combining][combined]] to breed a new indi set for further
+  backtesting. This process runs automatically and is based on principales of a
+  [[https://en.wikipedia.org/wiki/Genetic_algorithm][genetic algorithm]].
+  Progressively the the number of assigned functions in the indi set will grow
+  until all functions are assigned.
 
 ** Forward Testing
 :PROPERTIES:

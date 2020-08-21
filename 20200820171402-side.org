@@ -10,3 +10,8 @@ long until the indicator gives a signal in the oposite direction. Same for short
 signals.
 
 Some indicators also describe a neutral state.
+
+** Examples
+
+With a Two Lines Cross indicator with an up and a down line, the side is simply
+which line has the higher value.
