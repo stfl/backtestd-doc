@@ -1,4 +1,6 @@
-#+title: Side
+#+title: Indicator Side
+#+hugo_base_dir: hugo
+#+hugo_section: articles
 
 * Indicator Side
 

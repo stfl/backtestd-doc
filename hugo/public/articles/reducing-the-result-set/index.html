@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Reducing the result set</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="index.xml" title="Documentation for backtestd">
+
+<link id="dark-mode-theme" rel="stylesheet" href="css/dark.css" />
+<link rel="stylesheet" href="fontawesome/css/all.min.css" />
+
+<script src="js/bundle.js"></script>
+<script src="js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.68.3" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+        
+          <li><a href="/tags" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/categories" name="Category"><i class="fas fa-folder-open fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/search" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="articles-heading">
+          
+            <h1>Reducing the result set</h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <p>:CUSTOM_ID: reducing-the-result-set</p>
+<h2 id="reducing-n">Reducing n</h2>
+<p><em>n</em> is the number of values of a single input parameter. /The lengths of
+the input sets are obviously not all the same but for O() notation this
+does not matter./</p>
+<p>The size of <em>n</em> is defined by the number of possible values. The range,
+describing this has a start, a stop and a step value.</p>
+<ul>
+<li>If we reduce the move start and stop closer together.</li>
+<li>In case of a continuous input parameter the step value can be
+increased.</li>
+</ul>
+<h2 id="reducing-m">Reducing m</h2>
+<p>The number of free (variable) inputs can be reduces by setting inputs to
+a fixed value.</p>
+<p>Reducing the length of an input range to 1.</p>
+<h2 id="reducing-p">Reducing p</h2>
+<p>The number of input indicators in a indicator set has a significant
+impact of the search space.</p>
+<p>Ideally each indicator is tested individually.</p>
+<h2 id="reduction-procedure">Reduction Procedure</h2>
+<ul>
+<li>Testing a single indicator with an appropriate size of the search
+space.</li>
+<li>Reducing the indicators <em>n</em> and <em>m</em> by analyzing the results.
+Segmenting (Slicing) the search space of the indicator.</li>
+<li>Using the segmented indicator input space to combine with another
+indicator</li>
+<li>Segment and reduce the search space of the combination (indicator set)
+by analyzing the result space.</li>
+<li>Combine the indicator set with yet another indicator</li>
+<li>&hellip; continue until all functions of the algorithm are filled</li>
+</ul>
+<p>This procedure is a tree search. depth-first or breadth-first search is
+possible.</p>
+<p>This ensures that <em>n</em> and <em>m</em> are continuously reduced and non-relevant
+input parameters are not considered in the following rounds.</p>
+<p>Each tested indicator or indicator set may have multiple configurations
+that can be used for combinations.</p>
+<p>For example an indicator with a single input may have good results at a
+range of <code>[3, 8]</code> as well as <code>[14, 19]</code>. Both ranges may be used to
+combine with another indicator.</p>
+<ul>
+<li>continue with a genetic algorithm to breed between the leafs of the
+search tree</li>
+</ul>
+
+
+
+      
+    </article>
+    
+    
+      
+      
+</div>
+
+    <footer>
+  <div class="container">
+    <p class="credits copyright">
+      <a href="about">Stefan Lendl</a>
+      &nbsp;&copy;
+      0001
+
+      
+        &nbsp;/&nbsp;
+        <a href="">Documentation for backtestd</a>
+      
+
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+      </p>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

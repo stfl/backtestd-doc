@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Adding new Indicators</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="index.xml" title="Documentation for backtestd">
+
+<link id="dark-mode-theme" rel="stylesheet" href="css/dark.css" />
+<link rel="stylesheet" href="fontawesome/css/all.min.css" />
+
+<script src="js/bundle.js"></script>
+<script src="js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.68.3" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+        
+          <li><a href="/tags" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/categories" name="Category"><i class="fas fa-folder-open fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/search" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="articles-heading">
+          
+            <h1>Adding new Indicators</h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <h2 id="indicator-definitions">Indicator Definitions</h2>
+<p>The Indicators descriptions are defined with yaml config files in the
+config directory. <code>/nnfx/config/indicator/{function}/{indicator}.yaml</code></p>
+<p>The <em>function</em> of the indicator referres to it&rsquo;s function within the
+algorithm. Like <em>confirmation</em>, <em>exit</em>, <em>baseline</em>, &hellip;</p>
+<p>Example config for <em>ASH</em>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: ash
+<span style="color:#66d9ef">filename</span>: ASH
+<span style="color:#66d9ef">class</span>: ZeroLineCross
+<span style="color:#66d9ef">inputs</span>:
+    - - <span style="color:#ae81ff">9.0</span>
+      - <span style="color:#ae81ff">4.0</span>
+      - <span style="color:#ae81ff">20.0</span>
+      - <span style="color:#ae81ff">1.0</span>
+    - - <span style="color:#ae81ff">2.0</span>
+      - <span style="color:#ae81ff">0.0</span>
+      - <span style="color:#ae81ff">10.0</span>
+      - <span style="color:#ae81ff">1.0</span>
+    - - <span style="color:#ae81ff">0.0</span>
+      - <span style="color:#ae81ff">0.0</span>
+      - <span style="color:#ae81ff">1.0</span>
+      - <span style="color:#ae81ff">1.0</span>
+    - - <span style="color:#ae81ff">0.0</span>
+      - <span style="color:#ae81ff">0.0</span>
+      - <span style="color:#ae81ff">3.0</span>
+      - <span style="color:#ae81ff">1.0</span>
+    - - <span style="color:#ae81ff">0.0</span>
+      - <span style="color:#ae81ff">0.0</span>
+      - <span style="color:#ae81ff">6.0</span>
+      - <span style="color:#ae81ff">1.0</span>
+<span style="color:#66d9ef">buffers</span>:
+  - <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">shift</span>: <span style="color:#ae81ff">0</span>
+</code></pre></div><table>
+<thead>
+<tr>
+<th>option</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>name</strong></td>
+<td>The Name of the indicator. This is used in the data processing later</td>
+</tr>
+<tr>
+<td><strong>filename</strong></td>
+<td>The filename of the indicator as seen in MT5</td>
+</tr>
+<tr>
+<td><strong>class</strong></td>
+<td>The indicator class as described below.</td>
+</tr>
+<tr>
+<td><strong>inputs</strong></td>
+<td>The indicator input parameters in the order they appear in MT5</td>
+</tr>
+<tr>
+<td><strong>buffers</strong></td>
+<td>The index / indices of the internal buffers (lines) to use for the signal.</td>
+</tr>
+<tr>
+<td><strong>params</strong></td>
+<td>Additional parameters (params) depending on the class.</td>
+</tr>
+<tr>
+<td><strong>shift</strong></td>
+<td>How many candles the signal should be shifted</td>
+</tr>
+</tbody>
+</table>
+<h3 id="indicator-classes">Indicator Classes</h3>
+<table>
+<thead>
+<tr>
+<th>class</th>
+<th>buffers</th>
+<th>params</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Preset</td>
+<td>-</td>
+<td>-</td>
+<td>The functionality is defined in the code</td>
+</tr>
+<tr>
+<td>ZeroLineCross</td>
+<td>[line]</td>
+<td>-</td>
+<td>Single line crossing 0</td>
+</tr>
+<tr>
+<td>TwoLinesCross</td>
+<td>[up, down]</td>
+<td>-</td>
+<td>Two lines crossing</td>
+</tr>
+<tr>
+<td>ColorChange</td>
+<td>[line]</td>
+<td>color values: [neutral, up, down]</td>
+<td>Single line changing color</td>
+</tr>
+<tr>
+<td>Semaphore</td>
+<td>[line]</td>
+<td>-</td>
+<td>Signal signs like arrows on the chart</td>
+</tr>
+<tr>
+<td>LevelCross</td>
+<td>[line]</td>
+<td>[level]</td>
+<td>A Line crossing a levels</td>
+</tr>
+<tr>
+<td>TwoLevelsCross</td>
+<td>[line]</td>
+<td>[up enter, up exit, down enter, down exit]</td>
+<td>A Line crossing a two levels</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>[line]</td>
+<td>[up enter, up exit, down enter, down exit]</td>
+<td>A line the enters a saturation (overbought/ oversold) region</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TODO</strong> not complete list -&gt; write a more detailed description of each of
+the classes</p>
+<h3 id="inputs">Inputs</h3>
+<p>Each indicator has a number of input parameters</p>
+<figure>
+    <img src="/ox-hugo/ash_inputs.png"
+         alt="Figure 1: ash\_inputs"/> <figcaption>
+            <p>Figure 1: ash\_inputs</p>
+        </figcaption>
+</figure>
+
+<p>These Inputs are defined in the source of the indicator</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    input uint                 InpPeriod         <span style="color:#f92672">=</span>  <span style="color:#ae81ff">9</span>;             <span style="color:#75715e">// Period
+</span><span style="color:#75715e"></span>    input uint                 InpPeriodSm       <span style="color:#f92672">=</span>  <span style="color:#ae81ff">2</span>;             <span style="color:#75715e">// Smoothing
+</span><span style="color:#75715e"></span>    input ENUM_MODE            InpMode           <span style="color:#f92672">=</span>  MODE_RSI;      <span style="color:#75715e">// Mode
+</span><span style="color:#75715e"></span>    input ENUM_MA_METHOD       InpMethod         <span style="color:#f92672">=</span>  MODE_SMA;      <span style="color:#75715e">// Method
+</span><span style="color:#75715e"></span>    input ENUM_APPLIED_PRICE   InpAppliedPrice   <span style="color:#f92672">=</span>  PRICE_CLOSE;   <span style="color:#75715e">// Applied price
+</span></code></pre></div><p>In the yaml file the inputs are structured as follows and in this case
+define the <code>InpPeriod</code> from ASH with default value of 9. For the
+optimization process values starting at 4 until 20 are considered with a
+stepping of 1.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">        - - <span style="color:#ae81ff">9.0</span>    <span style="color:#75715e"># default value</span>
+          - <span style="color:#ae81ff">4.0</span>    <span style="color:#75715e"># start value</span>
+          - <span style="color:#ae81ff">20.0</span>   <span style="color:#75715e"># end value</span>
+          - <span style="color:#ae81ff">1.0</span>    <span style="color:#75715e"># step</span>
+</code></pre></div><p>The indicators are structured as a 2D array <code>[[], [], ..]</code> The first <code>-</code>
+indicates the index in the outer array, and the 4x <code>-</code> define the value
+and ranges of the input.</p>
+<p>In order to get the inputs into the yaml file I usually copy the inputs
+from the mq5 file, comment them out in the yaml file and add the inputs
+definition in between.</p>
+<h4 id="enumerations">Enumerations</h4>
+<p>Enum types can be used as integer values. For example
+<code>ENUM_APPLIED_PRICE</code> has possible values 0 - 6.</p>
+<table>
+<thead>
+<tr>
+<th>typical enum</th>
+<th>values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.mql5.com/en/docs/constants/chartconstants/enum%5Ftimeframes">ENUM\_TIMEFRAMES</a></td>
+<td>0 - 21 (Typically 0 = <em>CURRENT</em>)</td>
+</tr>
+<tr>
+<td><a href="https://www.mql5.com/en/docs/constants/indicatorconstants/prices">ENUM\_APPLIED\_PRICE</a></td>
+<td>0 - 6</td>
+</tr>
+<tr>
+<td><a href="https://www.mql5.com/en/docs/constants/indicatorconstants/enum%5Fma%5Fmethod">ENUM\_MA\_METHOD</a></td>
+<td>0 - 6</td>
+</tr>
+</tbody>
+</table>
+<p>Other enums like <code>ENUM_MODE</code> are typically defined in the code</p>
+<h3 id="buffers">Buffers</h3>
+<p>The buffers refer to the index or indices of the internal buffer of the
+indicator. For example ash has 7 internal buffers which is uses to for
+temporary values.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    SetIndexBuffer(<span style="color:#ae81ff">0</span>,BufferASH,INDICATOR_DATA);                  <span style="color:#75715e">// &lt;-- we are interested in this value
+</span><span style="color:#75715e"></span>    SetIndexBuffer(<span style="color:#ae81ff">1</span>,BufferColors,INDICATOR_COLOR_INDEX);
+    SetIndexBuffer(<span style="color:#ae81ff">2</span>,BufferBL,INDICATOR_CALCULATIONS);
+    SetIndexBuffer(<span style="color:#ae81ff">3</span>,BufferBR,INDICATOR_CALCULATIONS);
+    SetIndexBuffer(<span style="color:#ae81ff">4</span>,BufferAvgBL,INDICATOR_CALCULATIONS);
+    SetIndexBuffer(<span style="color:#ae81ff">5</span>,BufferAvgBR,INDICATOR_CALCULATIONS);
+    SetIndexBuffer(<span style="color:#ae81ff">6</span>,BufferAvgSmBL,INDICATOR_CALCULATIONS);
+    SetIndexBuffer(<span style="color:#ae81ff">7</span>,BufferAvgSmBR,INDICATOR_CALCULATIONS);
+    SetIndexBuffer(<span style="color:#ae81ff">8</span>,BufferMA,INDICATOR_CALCULATIONS);
+</code></pre></div><p>In this case index 0 is the value that is drawn to the chart and is the
+value we are interested in. In the buffers section in the yaml file 0 is
+inserted.</p>
+<p>For indicators of the TwoLinesCross class two buffers need to be
+inserted. For example the Ultra Trend indicator (ut) uses buffers 2 and
+4 for the up and the down line.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#66d9ef">buffers</span>:
+      - <span style="color:#ae81ff">2</span>
+      - <span style="color:#ae81ff">4</span>
+</code></pre></div><p>This needs to be figured out by looking at the code and trying a visual
+test run to verify the configuration.</p>
+<h3 id="params">Params</h3>
+<p>The params are defined according to the indicator class.</p>
+
+
+
+      
+    </article>
+    
+    
+      
+      
+</div>
+
+    <footer>
+  <div class="container">
+    <p class="credits copyright">
+      <a href="about">Stefan Lendl</a>
+      &nbsp;&copy;
+      0001
+
+      
+        &nbsp;/&nbsp;
+        <a href="">Documentation for backtestd</a>
+      
+
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+      </p>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

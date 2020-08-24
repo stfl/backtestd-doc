@@ -1,7 +1,6 @@
-* Testing New Indicators
-  :PROPERTIES:
-  :CUSTOM_ID: testing-new-indicators
-  :END:
+#+title: Testing New Indicators
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
 
 After a new indicator is defined in the system it shall be tested.
 Testing means calculating the fitness function ([[file:../Metrics/Metrics.org][metric]]) for each input
@@ -21,5 +20,5 @@ indicators in the combined indicator set.
 The result will be a table with maybe 100k rows. One row for each
 possible input combination with the resulting metrics.
 
-In order to reduce the search space it is necessary to [[Reducing the
-result set]]
+In order to reduce the search space it is necessary to [[file:Reducing the
+result set.org][Reducing the result set]]

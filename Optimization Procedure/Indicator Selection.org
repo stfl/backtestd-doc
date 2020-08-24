@@ -1,8 +1,11 @@
-* Indicator Selection
-  :PROPERTIES:
-  :CUSTOM_ID: indicator-selection
-  :END:
+#+title: Indicator Selection
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
+:PROPERTIES:
+:CUSTOM_ID: indicator-selection
+:END:
 
-Indicator selection describes the procedure and criteria of selecting multiple [[file:~/work/backtestd-doc/Algorithm Components/Sliced Indicator
- Set.org][sliced indicator sets]] from a pool of available configurations for [[file:Combination of Indicators.org][combination]]
-and further testing.
+Indicator selection describes the procedure and criteria of selecting multiple
+ [[file:../Algorithm Components/Sliced Indicator Set.org][sliced indicator
+ sets]] from a pool of available configurations for [[file:Combination of
+ Indicators.org][combination]] and further testing.

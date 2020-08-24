@@ -1,7 +1,9 @@
-* Average True Range (ATR)
-  :PROPERTIES:
-  :CUSTOM_ID: average-true-range-atr
-  :END:
+#+title: Average True Range (ATR)
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
+:PROPERTIES:
+:CUSTOM_ID: average-true-range-atr
+:END:
 
 The ATR is a very important indicator in this system that is used -
 amongst other functions - for money management.

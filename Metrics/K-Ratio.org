@@ -1,3 +1,7 @@
+#+title: K-Ratio
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
+
 Kestner (2003)
 
 #+BEGIN_QUOTE
@@ -13,8 +17,6 @@ Kestner (2003)
 #+END_QUOTE
 
 [[https://community.darwinex.com/t/equity-curve-straigthness-optimization-with-metatrader/3976]]
-
-$K-Ratio$
 
 [[https://latex.codecogs.com/png.latex?%5Ctextit%7B%5Ctextbf%7B%5Csmall&space;KRatio%7D%7D&space;=&space;%5Cfrac%7BSlope&space;Regression&space;Line%7D%7BStandard&space;Error&space;Regression&space;Line%7D]]
 

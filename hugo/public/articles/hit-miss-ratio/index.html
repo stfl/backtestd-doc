@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Hit Miss Ratio</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="index.xml" title="Documentation for backtestd">
+
+<link id="dark-mode-theme" rel="stylesheet" href="css/dark.css" />
+<link rel="stylesheet" href="fontawesome/css/all.min.css" />
+
+<script src="js/bundle.js"></script>
+<script src="js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.68.3" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+        
+          <li><a href="/tags" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/categories" name="Category"><i class="fas fa-folder-open fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/search" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="articles-heading">
+          
+            <h1>Hit Miss Ratio</h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <h2 id="definition">Definition</h2>
+<p>The hit miss ratio <a href="/articles/metrics/">Metric</a> is defined by <a href="/articles/vp/">VP</a> in
+<a href="https://nononsenseforex.com/forex-q-and-a-podcast/forex-backtesting-step-by-step/">Backtesting
+Step-by-step</a> as <em>win-rate</em>.</p>
+<p>This metric indicates if right after the entry signal price moves in our
+direction before it moves the other way.</p>
+<p>We use the terminology hit/miss instead of win/loss.</p>
+<blockquote>
+<p>Here is what determines a win [hit] or a loss [miss], listen up.</p>
+<ol>
+<li>– Start from today, and go back in time until you see your indicator give a
+buy or sell signal.</li>
+<li>– Find the value of the ATR at the time the buy/sell signal was given. We do
+not care what the ATR was at any other point in time. We only care about what
+it was when we got the signal.</li>
+<li>– Then find out which happened first. Did price end up hitting the value of
+the ATR first, or did it hit the value of 1.5 x ATR int he opposite direction
+first?</li>
+</ol>
+<p>For example: If the ATR at the time of the signal was 80 pips — which happened
+first? Did the trade make you 80 pips of profit, or did it lose you 120 pips?
+Which occurred first?</p>
+<p>If the profit happened first, it’s officially a WIN. If the loss happened first,
+it’s officially a LOSS.</p>
+</blockquote>
+<p>In short terms this is the ratio of <a href="/articles/20200820135056-tp/">TP</a> vs SL hits \( \frac{TP}{SL} \)</p>
+<p>The TP is set at a distance of \(1*ATR\) whereas the SL is set at \(1.5*ATR\). With
+this distances and the assumption that the probaility of the price ot move up or
+down is approximately identical the
+<a href="/articles/20200820135757-random_indicator/">random indicator</a> would score
+\(1 - \frac{1 ATR}{2.5 ATR} = 0.6\).</p>
+<h2 id="implications">Implications</h2>
+<p>When using the metric for automatic optimization it favours configurations with
+few trades. A config with only a single entry signal witch is a hit results in a hit/miss ratio of 1.</p>
+
+
+
+      
+    </article>
+    
+    
+      
+      
+</div>
+
+    <footer>
+  <div class="container">
+    <p class="credits copyright">
+      <a href="about">Stefan Lendl</a>
+      &nbsp;&copy;
+      0001
+
+      
+        &nbsp;/&nbsp;
+        <a href="">Documentation for backtestd</a>
+      
+
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+      </p>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

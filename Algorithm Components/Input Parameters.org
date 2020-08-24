@@ -1,4 +1,6 @@
-* Input Parameters
+#+title: Input Parameters
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
 
 usually referred to as *input*.
 

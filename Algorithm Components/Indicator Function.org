@@ -1,18 +1,25 @@
-* Indicator Function
-  :PROPERTIES:
-  :CUSTOM_ID: indicator-function
-  :END:
+#+title: Indicator Function
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
+:PROPERTIES:
+:CUSTOM_ID: indicator-function
+:END:
 
 The indicator function or simply function (/func/) defines the purpose of
 an [[file:Indicator.org][indicator]] within an [[file:Indicator Set.org][indicator set]].
 
 An indicator contains indicators with the following functions:
 
-- [[file:~/work/backtestd-doc/NNFX Algo/Confirmation Indicator.org][Confirmation]] (C1)
-- [[file:~/work/backtestd-doc/NNFX Algo/2nd Confirmation Indicator (C2).org][2nd Confirmation]] (C2)
+# - [[file:../NNFX Algo/Confirmation Indicator.org][Confirmation]] (C1)
+- Confirmation (C1)
+# - [[file:../NNFX Algo/2nd Confirmation Indicator (C2).org][2nd Confirmation]] (C2)
+- 2nd Confirmation Indicator (C2)
 - 3rd Confirmation (C3)
-- [[file:~/work/backtestd-doc/NNFX Algo/Volume Volatility Indicator (V).org][Volume or Volatility Indicator]] (V)
-- [[file:~/work/backtestd-doc/NNFX Algo/Baseline Indicator.org][Baseline]] (B)
-- [[file:~/work/backtestd-doc/NNFX Algo/Exit Indicator.org][Exit]] (E)
-- [[file:~/work/backtestd-doc/NNFX Algo/Continuation Indicator.org][Continuation]] (Ct)
+# - [[file:../NNFX Algo/Volume Volatility Indicator (V).org][Volume or Volatility Indicator]] (V)
+- Volume or Valatility Indicator (V)
+# - [[file:../NNFX Algo/Baseline Indicator.org][Baseline]] (B)
+- Baseline (B)
+# - [[file:../NNFX Algo/Exit Indicator.org][Exit]] (E)
+- Exit (E)
+# - [[file:../NNFX Algo/Continuation Indicator.org][Continuation]] (Ct)
 - [[file:../Indicators/Average True Range (ATR).org][Average True Range (ATR)]]

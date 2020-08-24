@@ -1,4 +1,6 @@
 #+title: Standard Deviation
+#+hugo_base_dir: hugo
+#+hugo_section: articles
 
 Instead of the ATR [[https://en.wikipedia.org/wiki/Standard_deviation][Standard deviation]] could also be used for money / risk management.
 

@@ -1,4 +1,7 @@
-* Indicators
+#+title: Indicators
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
+
 :PROPERTIES:
 :ID:       230500d7-fbef-458d-9e60-f7bf5bc086ae
 :END:
@@ -18,7 +21,7 @@ signals and combine them to get even better results. Determining the quality of
 an indicator is a complex problem. [[file:../Metrics/Metrics.org][Metrics]] describes this problem in more
 detail.
 
-** MetaTrader5 Indicators
+* MetaTrader5 Indicators
    :PROPERTIES:
    :CUSTOM_ID: metatrader5-indicators
    :END:

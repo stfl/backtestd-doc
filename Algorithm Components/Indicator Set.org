@@ -1,7 +1,10 @@
-* Indicator Set
-  :PROPERTIES:
-  :CUSTOM_ID: indicator-set
-  :END:
+#+title: Indicator Set
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
+:PROPERTIES:
+:CUSTOM_ID: indicator-set
+:END:
 
-An indicator set (indi set) is a set of [[file:Indicator]]s used in an
-[[file:Algorithm]]. Each indicator has a specific [[file:Indicator Function]].
+An indicator set (indi set) is a set of [[file:Indicator.org][indicators]] used
+in a - so called - [[file:Algorithm.org][algorithm]]. Each indicator has a
+specific [[file:Indicator Function.org][indicator function]].

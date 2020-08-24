@@ -1,4 +1,6 @@
-#+TITLE Algorithm Rules
+#+TITLE: Algorithm Rules
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
 :PROPERTIES:
 :ID:       3d2f35ed-3bb2-49c2-80be-209caf62b56c
 :END:
@@ -12,14 +14,16 @@ The rules describe a signaling indicator and multiple filter indicators. The
 signaling indicator gives a signal and if the filter indicators agree to this
 signal, a new trade may be opened.
 
-Indicators at the [[file:Confirmation Indicator.org][confirmation]], [[file:Baseline Indicator.org][baseline]] and [[file:Continuation Indicator.org][continuation]] function act as signaling
+# Indicators at the [[file:Confirmation Indicator.org][confirmation]], [[file:Baseline Indicator.org][baseline]] and [[file:Continuation Indicator.org][continuation]] function act as signaling
+Indicators at the *confirmation*, *baseline* and *continuation* function act as signaling
 indicators. All other indicators act as a filter. Baseline is also a filter for
 a confirmation signal and vice-versa.
 
 ** Confirmation Signal
 
-If the confirmation indicator (C1) produces a [[file:../Algorithm Components/Signal.org][signal]] the [[file:../20200820171402-side.org][sides]] of C2, E, B and V
-need to be the same direction as the signal.
+If the confirmation indicator (C1) produces a [[file:../Algorithm
+Components/Signal.org][signal]] the [[file:../20200820171402-side.org][sides]]
+of C2, E, B and V need to be the same direction as the signal.
 
 *** One Candle Rule
 

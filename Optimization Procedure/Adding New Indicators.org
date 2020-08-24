@@ -1,6 +1,8 @@
-* Adding new Indicators
+#+title: Adding new Indicators
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
 
-** Indicator Definitions
+* Indicator Definitions
    :PROPERTIES:
    :CUSTOM_ID: indicator-definitions
    :END:
@@ -53,7 +55,7 @@ shift: 0
 | *params*   | Additional parameters (params) depending on the class.                     |
 | *shift*    | How many candles the signal should be shifted                              |
 
-*** Indicator Classes
+** Indicator Classes
     :PROPERTIES:
     :CUSTOM_ID: indicator-classes
     :END:
@@ -72,7 +74,7 @@ shift: 0
 *TODO* not complete list -> write a more detailed description of each of
 the classes
 
-*** Inputs
+** Inputs
     :PROPERTIES:
     :CUSTOM_ID: inputs
     :END:
@@ -112,7 +114,7 @@ In order to get the inputs into the yaml file I usually copy the inputs
 from the mq5 file, comment them out in the yaml file and add the inputs
 definition in between.
 
-**** Enumerations
+*** Enumerations
      :PROPERTIES:
      :CUSTOM_ID: enumerations
      :END:
@@ -128,7 +130,7 @@ Enum types can be used as integer values. For example
 
 Other enums like =ENUM_MODE= are typically defined in the code
 
-*** Buffers
+** Buffers
     :PROPERTIES:
     :CUSTOM_ID: buffers
     :END:
@@ -166,7 +168,7 @@ inserted. For example the Ultra Trend indicator (ut) uses buffers 2 and
 This needs to be figured out by looking at the code and trying a visual
 test run to verify the configuration.
 
-*** Params
+** Params
     :PROPERTIES:
     :CUSTOM_ID: params
     :END:

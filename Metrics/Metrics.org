@@ -1,16 +1,20 @@
-* Metrics
-  :PROPERTIES:
-  :CUSTOM_ID: metrics
-  :END:
+#+title: Metrics
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
+:PROPERTIES:
+:CUSTOM_ID: metrics
+:END:
 
-A metric or also called a fitness function in this system describes a
-function to evaluate the performance of an [[file:../Algorithm Components/Indicator.org][indicator]] or an [[file:../Algorithm Components/Indicator Set.org][Indicator Set]].
+A metric or also called a fitness function in this system describes a function
+to evaluate the performance of an [[file:../Algorithm
+Components/Indicator.org][indicator]] or an [[file:../Algorithm
+Components/Indicator Set.org][Indicator Set]].
 
 Metrics:
 
-- [[file:Hit Miss Ratio.org]]
-- [[file:Double Hit Ratio.org]]
-- [[file:Return of Investment.org]]
-- [[file:Profit Factor.org]]
-- [[file:Avg. Profit per Trade.org]]
-- [[file:K-Ratio.org]]
+- [[file:Hit Miss Ratio.org][Hit Miss Ratio]]
+# TODO - [[file:Double Hit Ratio.org][Double Hit Ratio]]
+# TODO - [[file:Return of Investment.org][Return of Investment (ROI)]]
+- [[file:Profit Factor.org][Profit Factor (PF)]]
+# TODO - [[file:Avg. Profit per Trade.org][Avg. Profit per Trade]]
+- [[file:K-Ratio.org][K-Ratio]]

@@ -1,1 +1,3 @@
-* Return of Investment (ROI)
+#+title: Return of Investment (ROI)
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles

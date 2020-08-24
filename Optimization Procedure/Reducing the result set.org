@@ -1,9 +1,8 @@
-* Reducing the result set
-  :PROPERTIES:
-  :CUSTOM_ID: reducing-the-result-set
-  :END:
+#+title: Reducing the result set
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
 
-** Reducing n
+* Reducing n
    :PROPERTIES:
    :CUSTOM_ID: reducing-n
    :END:
@@ -19,7 +18,7 @@ describing this has a start, a stop and a step value.
 - In case of a continuous input parameter the step value can be
   increased.
 
-** Reducing m
+* Reducing m
    :PROPERTIES:
    :CUSTOM_ID: reducing-m
    :END:
@@ -29,7 +28,7 @@ a fixed value.
 
 Reducing the length of an input range to 1.
 
-** Reducing p
+* Reducing p
    :PROPERTIES:
    :CUSTOM_ID: reducing-p
    :END:
@@ -39,7 +38,7 @@ impact of the search space.
 
 Ideally each indicator is tested individually.
 
-** Reduction Procedure
+* Reduction Procedure
    :PROPERTIES:
    :CUSTOM_ID: reduction-procedure
    :END:

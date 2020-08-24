@@ -1,6 +1,8 @@
-* Parameter Optimization
+#+title: Parameter Optimization
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
 
-[[file:~/work/backtestd-doc/files/strat_dev_process.pdf][Developing & Backtesting Systematic Trading Strategies (pdf)]]
+[[file:../files/strat_dev_process.pdf][Developing & Backtesting Systematic Trading Strategies (pdf)]]
 
 Peterson, Brian. (2017). Developing & Backtesting Systematic Trading Strategies.
 

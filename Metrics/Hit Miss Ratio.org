@@ -1,9 +1,14 @@
-* Hit Miss Ratio
+#+title: Hit Miss Ratio
 #+STARTUP: latexpreview
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
 
-** Definition
+* Definition
 
-The hit miss ratio [[file:Metrics.org][Metric]] is defined by [[file:../NNFX Algo/VP.org][VP]] in [[https://nononsenseforex.com/forex-q-and-a-podcast/forex-backtesting-step-by-step/][Backtesting Step-by-step]] as /win-rate/.
+The hit miss ratio [[file:Metrics.org][Metric]] is defined by [[file:../NNFX
+Algo/VP.org][VP]] in
+[[https://nononsenseforex.com/forex-q-and-a-podcast/forex-backtesting-step-by-step/][Backtesting
+Step-by-step]] as /win-rate/.
 
 This metric indicates if right after the entry signal price moves in our
 direction before it moves the other way.
@@ -34,11 +39,12 @@ In short terms this is the ratio of [[file:../20200820135056-tp.org][TP]] vs SL 
 
 The TP is set at a distance of $1*ATR$ whereas the SL is set at $1.5*ATR$. With
 this distances and the assumption that the probaility of the price ot move up or
-down is approximately identical the [[file:../20200820135757-random_indicator.org][random indicator]] would score $1 - \frac{1
-ATR}{2.5 ATR} = 0.6$.
+down is approximately identical the
+[[file:../20200820135757-random_indicator.org][random indicator]] would score
+$1 - \frac{1 ATR}{2.5 ATR} = 0.6$.
 
 
-** Implications
+* Implications
 
 When using the metric for automatic optimization it favours configurations with
 few trades. A config with only a single entry signal witch is a hit results in a hit/miss ratio of 1.

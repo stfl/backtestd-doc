@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Optimization Procedure</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="index.xml" title="Documentation for backtestd">
+
+<link id="dark-mode-theme" rel="stylesheet" href="css/dark.css" />
+<link rel="stylesheet" href="fontawesome/css/all.min.css" />
+
+<script src="js/bundle.js"></script>
+<script src="js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.68.3" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+        
+          <li><a href="/tags" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/categories" name="Category"><i class="fas fa-folder-open fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/search" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="articles-heading">
+          
+            <h1>Optimization Procedure</h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <p>The optimization procedure in this system defines the process of finding a
+profitable configuration for the system according to the given <a href="/articles/algorithm-rules/">algortihm rules</a>.</p>
+<h2 id="backtesting-in-metatrader-5-properties-custom-id-backtesting-in-metatrader-5"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> Backtesting in Metatrader 5 :PROPERTIES: :CUSTOM_ID: backtesting-in-metatrader-5</h2>
+<h2 id="new-indicators">New Indicators</h2>
+<p>The optimization starts with <a href="/articles/adding-new-indicators/">adding</a> and <a href="/articles/testing-new-indicators/">testing new indicators</a> to calculate the
+<a href="/articles/metrics/">metric</a> for a range of <a href="/articles/input-parameters/">Input Parameters</a>. In order to filter <a href="/articles/reducing-the-result-set/">(reduce)</a> the result
+for further processing we <a href="/articles/analyzing-results/">analyze the results</a>. The resulting configurations is
+referred to as <a href="/articles/sliced-indicator-set/">Sliced Indicator Set</a>.</p>
+<h2 id="continuous-optimization">Continuous Optimization</h2>
+<p>From the previously gathered sliced indi set configs multiple candidates are
+<a href="/articles/indicator-selection/">selected</a> - based on a
+<a href="/articles/metrics/">metric</a> - and <a href="/articles/combination-of-indicators/#combining">combined</a> to breed a new indi set for further
+backtesting. This process runs automatically and is based on principales of a
+<a href="https://en.wikipedia.org/wiki/Genetic%5Falgorithm">genetic algorithm</a>.
+Progressively the the number of assigned functions in the indi set will grow
+until all functions are assigned.</p>
+<h2 id="forward-testing">Forward Testing</h2>
+<p>After we find a suitable indicator set with all functions assigned we select a
+<a href="/articles/input-parameters/#Concrete Indicator Set">Input Parameters</a> and forward test the configuration for a certain period
+of time until we are conviced that the configuration is acceptable. Forward
+testing is performed on a demo account of a broker of choice.</p>
+<h2 id="building-a-track-record">Building a Track Record</h2>
+<p>In order to monetize the signals from the algorithm it is important to generate
+a record of actual trades either on a demo account or a real-money account. The
+results from forward testing may be used as track record as well.</p>
+
+
+
+      
+    </article>
+    
+    
+      
+      
+</div>
+
+    <footer>
+  <div class="container">
+    <p class="credits copyright">
+      <a href="about">Stefan Lendl</a>
+      &nbsp;&copy;
+      0001
+
+      
+        &nbsp;/&nbsp;
+        <a href="">Documentation for backtestd</a>
+      
+
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+      </p>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

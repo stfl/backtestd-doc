@@ -1,4 +1,6 @@
-* Profit Factor
+#+title: Profit Factor
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
 
 It is the ratio between Gross profits and Gross losses.
 

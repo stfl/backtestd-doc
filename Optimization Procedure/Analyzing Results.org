@@ -1,4 +1,6 @@
-* Analyzing Results
+#+title: Analyzing Results
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
 
 When backtesting indicators or indicator sets there is a significant likelihood
 of [[https://en.wikipedia.org/wiki/Curve_fitting][curve fitting]] which gives good results for the specific backtested period but
@@ -10,8 +12,10 @@ over-optimization.
    :CUSTOM_ID: filtering-over-optimization
    :END:
 
-[[file:Parameter Optimization.org][Parameter Optimization]] describes that if the value of a [[file:~/work/backtestd-doc/Algorithm Components/Input Parameters.org::#continuous-input][Continuous Input]] changes,
-the result value must change proportionally to the input change.
+[[file:Parameter Optimization.org][Parameter Optimization]] describes that if
+the value of a [[file:../Algorithm Components/Input
+Parameters.org::#continuous-input][Continuous Input]] changes, the result value
+must change proportionally to the input change.
 
 *** Assumtion:
 based on [[file:Parameter Optimization.org][Parameter Optimization]]

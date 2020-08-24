@@ -1,4 +1,6 @@
 #+title: Random Indicator
+#+hugo_base_dir: hugo
+#+hugo_section: articles
 
 The random indicator is an indicator that randomly takes trades in any
 direction. This can be considered the baseline which we have to surpass.

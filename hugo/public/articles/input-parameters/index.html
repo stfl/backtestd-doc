@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Input Parameters</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="index.xml" title="Documentation for backtestd">
+
+<link id="dark-mode-theme" rel="stylesheet" href="css/dark.css" />
+<link rel="stylesheet" href="fontawesome/css/all.min.css" />
+
+<script src="js/bundle.js"></script>
+<script src="js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.68.3" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+        
+          <li><a href="/tags" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/categories" name="Category"><i class="fas fa-folder-open fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/search" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="articles-heading">
+          
+            <h1>Input Parameters</h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <p>usually referred to as <strong>input</strong>.</p>
+<h2 id="types-of-input-parameters">Types of Input Parameters</h2>
+<p>An MT5 Indicator may have different types of inputs</p>
+<ul>
+<li>Integer</li>
+<li>Float</li>
+<li>String</li>
+<li>Boolean (Bool)</li>
+<li>Enumerations (Enum)</li>
+</ul>
+<h3 id="continuous-input">Continuous Input</h3>
+<p>An input is continuous if an adjacent input value only slightly changes
+the function of an indicator.</p>
+<p>Adjacent input values result in a continuous result space.</p>
+<p>Typically <strong>Integer</strong> and <strong>Float</strong> inputs are continuous.</p>
+<p>An example would be the the period of an moving average.</p>
+<h3 id="distinct-non-continuous-input">Distinct (Non-Continuous) Input</h3>
+<p>If a distinct input value changes slightly, the function of the
+indicator changes significantly. Adjacent input values result in
+distinct results spaces.</p>
+<p>Typically <strong>Bool</strong> and <strong>Enum</strong> inputs are distinct.</p>
+<h2 id="input-parameter-ranges">Input Parameter ranges</h2>
+<h3 id="ranged-inputs">Ranged Inputs</h3>
+<p>An input parameter is <strong>ranged</strong> if a range of possible values is defined.
+This is defined with <code>[default, start, stop, step]</code> values in indicator description.</p>
+<h3 id="concrete-inputs">Concrete Inputs</h3>
+<p>An input is concrete if only a single, fixed value is possible.</p>
+<h3 id="ranged-indicator-set">Ranged Indicator Set</h3>
+<ul>
+<li>An <a href="/articles/indicator/">indicator</a> is considered ranged if <strong>any</strong> of the inputs is ranged.</li>
+<li>An <a href="/articles/indicator-set/">indicator set</a> is ranged if <strong>any</strong> of the indicators in the set is ranged.</li>
+</ul>
+<p>When <a href="/articles/adding-new-indicators/">adding a new indicator</a> or a <a href="/articles/sliced-indicator-set/">sliced indicator set</a> may have ranged inputs.</p>
+<p>Continuous as well as distinct inputs may be ranged. In the case of distinct
+inputs, the range is not logically coherent. This is sensible for defining a
+wide range of inputs when adding a new indicator.</p>
+<h3 id="concrete-indicator-set">Concrete Indicator Set</h3>
+<ul>
+<li>An <a href="/articles/indicator/">indicator</a> is considered concrete if <strong>all</strong> of the inputs are concrete.</li>
+<li>An <a href="/articles/indicator-set/">indicator set</a> is concrete if <strong>all</strong> of the indicators in the set are concrete.</li>
+</ul>
+<p>The result of the optimization procedure is always a concrete indicator set
+which can be instantiated for forward testing and actual trading.</p>
+
+
+
+      
+    </article>
+    
+    
+      
+      
+</div>
+
+    <footer>
+  <div class="container">
+    <p class="credits copyright">
+      <a href="about">Stefan Lendl</a>
+      &nbsp;&copy;
+      0001
+
+      
+        &nbsp;/&nbsp;
+        <a href="">Documentation for backtestd</a>
+      
+
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+      </p>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

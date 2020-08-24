@@ -1,10 +1,11 @@
-* Sliced Indicator Set
-  :PROPERTIES:
-  :CUSTOM_ID: sliced-indicator-set
-  :END:
+#+title: Sliced Indicator Set
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
 
 also called segmented.
 
-The output of [[file:../Optimization Procedure/Analyzing Results.org][the analyzing results]] stage that [[file:~/work/backtestd-doc/Optimization Procedure/Reducing the result set.org][reduces the result set]].
-
-A sliced indicator set has ranged [[file:Input Parameters.org][input parameters]] because working with ranged inputs is significantly more efficient than with
+The output of [[file:../Optimization Procedure/Analyzing Results.org][the
+analyzing results]] stage that [[file:../Optimization Procedure/Reducing the
+result set.org][reduces the result set]]. A sliced indicator set has ranged
+[[file:Input Parameters.org][input parameters]] because working with ranged
+inputs is significantly more efficient than with
