@@ -1,73 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-<title>Reducing the result set</title>
-
-
-  
-
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="alternate" type="application/rss+xml" href="index.xml" title="Documentation for backtestd">
-
-<link id="dark-mode-theme" rel="stylesheet" href="css/dark.css" />
-<link rel="stylesheet" href="fontawesome/css/all.min.css" />
-
-<script src="js/bundle.js"></script>
-<script src="js/instantpage.js" type="module" defer></script>
-<meta name="generator" content="Hugo 0.68.3" />
-  </head>
-  <body>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
     
-  
-
-
-
-
-  <header>
-    <nav class="navbar">
-  <div class="nav">
+    
     
 
-    <ul class="nav-links">
-      
-        
-          <li><a href="/tags" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
-        
-      
-        
-          <li><a href="/categories" name="Category"><i class="fas fa-folder-open fa-lg"></i></a></li>
-        
-      
-        
-          <li><a href="/search" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
-        
-      
-    </ul>
-  </div>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+
+    
+    <meta name="referrer" content="no-referrer">
+
+    
+        <meta name="description" content="Documentation for the automated optimization pipeline">
+    
+
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    <title>Reducing the result set &mdash; Backtestd documentation</title>
+
+    <link rel="stylesheet" href="/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="/css/onyx.css" type="text/css" />
+
+    
+        <link rel="stylesheet" href="/css/github_chroma.css">
+    
+
+    
+
+    
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    
+
+    
+
+    
+    
+<meta property="og:title" content="Reducing the result set" />
+<meta property="og:description"
+      content="Reducing n n is the number of values of a single input parameter. /The lengths of the input sets are obviously not all the same but for O() notation this does not matter./ The size of n is defined by the number of possible values. The range, describing this has a start, a stop and a step value. If we reduce the move start and stop closer together. In case of a continuous input parameter the step value can be increased.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/articles/reducing-the-result-set/" />
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reducing the result set"/>
+<meta name="twitter:description" content="Reducing n n is the number of values of a single input parameter. /The lengths of the input sets are obviously not all the same but for O() notation this does not matter./ The size of n is defined by the number of possible values. The range, describing this has a start, a stop and a step value. If we reduce the move start and stop closer together. In case of a continuous input parameter the step value can be increased.
+"/>
+
+</head>
+
+    <body>
+	<div class="document">
+	    <div class="documentwrapper">
+		<div class="bodywrapper">
+		    <div class="body">
+                        
+                            
+                                <div class="toc">
+                                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#reducing-n">Reducing n</a></li>
+    <li><a href="#reducing-m">Reducing m</a></li>
+    <li><a href="#reducing-p">Reducing p</a></li>
+    <li><a href="#reduction-procedure">Reduction Procedure</a></li>
+  </ul>
 </nav>
+                                    <a href="#" class="back-to-top">Back to top</a>
+                                </div>
+                            
+                            <script src="js/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 
-    <div class="intro-header">
-      <div class="container">
-        <div class="articles-heading">
-          
-            <h1>Reducing the result set</h1>
-          
-          
-        </div>
-      </div>
-    </div>
-  </header>
+<script>
+ (function() {
+     var $toc = $('#TableOfContents');
+     if ($toc.length > 0) {
+         var $window = $(window);
+
+         function onScroll(){
+             var currentScroll = $window.scrollTop();
+             var h = $('.body h1, .body h2, .body h3, .body h4, .body h5, .body h6');
+             var id = "";
+             h.each(function (i, e) {
+                 e = $(e);
+                 if (e.offset().top - 10 <= currentScroll) {
+                     id = e.attr('id');
+                 }
+             });
+             var current = $toc.find('a.current');
+             if (current.length == 1 && current.eq(0).attr('href') == '#' + id) return true;
+
+             current.each(function (i, e) {
+                 $(e).removeClass('current').siblings('ul').hide();
+             });
+             $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+                 $(e).children('a').addClass('current').siblings('ul').show();
+             });
+         }
+
+         $window.on('scroll', onScroll);
+         $(document).ready(function() {
+             $toc.find('a').parent('li').find('ul').hide();
+             onScroll();
+             document.getElementsByClassName('toc')[0].style.display = '';
+         });
+     }
+ })();
+</script>
+
+                        
+
+			
+
+<h1>Reducing the result set</h1>
+
+<div>
+    
+    
+    
+    <span class="author">&mdash;
+        
+            Stefan Lendl
+        
+    </span>
+
 
 
     
-  <div class="container" role="main">
-    <article class="article" class="blog-post">
-      
-    <p>:CUSTOM_ID: reducing-the-result-set</p>
-<h2 id="reducing-n">Reducing n</h2>
+
+    <div class="clear-float"></div>
+    
+    <div class="clear-float"></div>
+</div>
+
+<div class="post">
+    
+
+    <h2 id="reducing-n">Reducing n&nbsp;<a class="headline-hash" href="#reducing-n">#</a> </h2>
 <p><em>n</em> is the number of values of a single input parameter. /The lengths of
 the input sets are obviously not all the same but for O() notation this
 does not matter./</p>
@@ -78,15 +167,15 @@ describing this has a start, a stop and a step value.</p>
 <li>In case of a continuous input parameter the step value can be
 increased.</li>
 </ul>
-<h2 id="reducing-m">Reducing m</h2>
+<h2 id="reducing-m">Reducing m&nbsp;<a class="headline-hash" href="#reducing-m">#</a> </h2>
 <p>The number of free (variable) inputs can be reduces by setting inputs to
 a fixed value.</p>
 <p>Reducing the length of an input range to 1.</p>
-<h2 id="reducing-p">Reducing p</h2>
+<h2 id="reducing-p">Reducing p&nbsp;<a class="headline-hash" href="#reducing-p">#</a> </h2>
 <p>The number of input indicators in a indicator set has a significant
 impact of the search space.</p>
 <p>Ideally each indicator is tested individually.</p>
-<h2 id="reduction-procedure">Reduction Procedure</h2>
+<h2 id="reduction-procedure">Reduction Procedure&nbsp;<a class="headline-hash" href="#reduction-procedure">#</a> </h2>
 <ul>
 <li>Testing a single indicator with an appropriate size of the search
 space.</li>
@@ -114,36 +203,74 @@ search tree</li>
 </ul>
 
 
-
-      
-    </article>
-    
-    
-      
-      
 </div>
 
-    <footer>
-  <div class="container">
-    <p class="credits copyright">
-      <a href="about">Stefan Lendl</a>
-      &nbsp;&copy;
-      0001
 
-      
-        &nbsp;/&nbsp;
-        <a href="">Documentation for backtestd</a>
-      
 
-      &nbsp;&ndash;&nbsp;
-      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+			
+			
+		    </div>
+		</div>
+	    </div>
 
-      <p class="credits theme-by">
-        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
-      </p>
-    </p>
-  </div>
-</footer>
+	    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+    <div class="sphinxsidebarwrapper">
+        <p class="logo">
+            <a href="">
+                <img class="logo" src="/favicon.ico" alt="Logo"/>
+                
+                <br />
+                <span class="logo logo-name">Backtestd</span>
+            </a>
+        </p>
 
-  </body>
+        <p class="blurb">Documentation for the automated optimization pipeline</p>
+        
+
+        
+    
+
+    
+        <iframe src="https://ghbtns.com/github-btn.html?user=stfl&repo=backtestd-doc&type=watch&count=true&size=large"
+                style="border: 0; overflow: hidden;" width="200" height="35"
+                sandbox="allow-scripts allow-popups"></iframe>
+        
+    
+
+    
+
+    
+
+
+        
+
+        
+
+
+        
+
+    </div>
+</div>
+<div class="clearer"></div>
+
+	    <div class="footer">
+    
+        
+            This site is generated using
+        
+        <a href="https://gohugo.io/">Hugo 0.74.3</a>
+	&plus; <a href="https://github.com/kaushalmodi/hugo-onyx-theme">Onyx</a>
+    
+</div>
+
+
+
+
+	    
+
+            
+
+	    
+	</div>
+    </body>
 </html>

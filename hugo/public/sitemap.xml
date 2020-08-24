@@ -27,15 +27,11 @@
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/</loc>
   </url>
   
   <url>
     <loc>/articles/combination-of-indicators/</loc>
-  </url>
-  
-  <url>
-    <loc>/</loc>
   </url>
   
   <url>
@@ -52,6 +48,10 @@
   
   <url>
     <loc>/articles/indicator-set/</loc>
+  </url>
+  
+  <url>
+    <loc>/articles/20200820171402-side/</loc>
   </url>
   
   <url>
@@ -100,10 +100,6 @@
   
   <url>
     <loc>/articles/20200820155536-standard_deviation/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
   </url>
   
   <url>

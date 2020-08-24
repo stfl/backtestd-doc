@@ -1,105 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-<title>Adding new Indicators</title>
-
-
-  
-
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="alternate" type="application/rss+xml" href="index.xml" title="Documentation for backtestd">
-
-<link id="dark-mode-theme" rel="stylesheet" href="css/dark.css" />
-<link rel="stylesheet" href="fontawesome/css/all.min.css" />
-
-<script src="js/bundle.js"></script>
-<script src="js/instantpage.js" type="module" defer></script>
-<meta name="generator" content="Hugo 0.68.3" />
-  </head>
-  <body>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
     
-  
-
-
-
-
-  <header>
-    <nav class="navbar">
-  <div class="nav">
+    
     
 
-    <ul class="nav-links">
-      
-        
-          <li><a href="/tags" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
-        
-      
-        
-          <li><a href="/categories" name="Category"><i class="fas fa-folder-open fa-lg"></i></a></li>
-        
-      
-        
-          <li><a href="/search" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
-        
-      
-    </ul>
-  </div>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+
+    
+    <meta name="referrer" content="no-referrer">
+
+    
+        <meta name="description" content="Documentation for the automated optimization pipeline">
+    
+
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    <title>Adding new Indicators &mdash; Backtestd documentation</title>
+
+    <link rel="stylesheet" href="/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="/css/onyx.css" type="text/css" />
+
+    
+        <link rel="stylesheet" href="/css/github_chroma.css">
+    
+
+    
+
+    
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    
+
+    
+
+    
+    
+<meta property="og:title" content="Adding new Indicators" />
+<meta property="og:description"
+      content="Indicator Definitions The Indicators descriptions are defined with yaml config files in the config directory. /nnfx/config/indicator/{function}/{indicator}.yaml The function of the indicator referres to it&amp;rsquo;s function within the algorithm. Like confirmation, exit, baseline, &amp;hellip; Example config for ASH: name:ashfilename:ASHclass:ZeroLineCrossinputs:- - 9.0- 4.0- 20.0- 1.0- - 2.0- 0.0- 10.0- 1.0- - 0.0- 0.0- 1.0- 1.0- - 0.0- 0.0- 3.0- 1.0- - 0.0- 0.0- 6.0- 1.0buffers:- 0shift:0 option description name The Name of the indicator.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/articles/adding-new-indicators/" />
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Adding new Indicators"/>
+<meta name="twitter:description" content="Indicator Definitions The Indicators descriptions are defined with yaml config files in the config directory. /nnfx/config/indicator/{function}/{indicator}.yaml The function of the indicator referres to it&amp;rsquo;s function within the algorithm. Like confirmation, exit, baseline, &amp;hellip; Example config for ASH: name:ashfilename:ASHclass:ZeroLineCrossinputs:- - 9.0- 4.0- 20.0- 1.0- - 2.0- 0.0- 10.0- 1.0- - 0.0- 0.0- 1.0- 1.0- - 0.0- 0.0- 3.0- 1.0- - 0.0- 0.0- 6.0- 1.0buffers:- 0shift:0 option description name The Name of the indicator.
+"/>
+
+</head>
+
+    <body>
+	<div class="document">
+	    <div class="documentwrapper">
+		<div class="bodywrapper">
+		    <div class="body">
+                        
+                            
+                                <div class="toc">
+                                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#indicator-definitions">Indicator Definitions</a>
+      <ul>
+        <li><a href="#indicator-classes">Indicator Classes</a></li>
+        <li><a href="#inputs">Inputs</a></li>
+        <li><a href="#buffers">Buffers</a></li>
+        <li><a href="#params">Params</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
+                                    <a href="#" class="back-to-top">Back to top</a>
+                                </div>
+                            
+                            <script src="js/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 
-    <div class="intro-header">
-      <div class="container">
-        <div class="articles-heading">
-          
-            <h1>Adding new Indicators</h1>
-          
-          
-        </div>
-      </div>
-    </div>
-  </header>
+<script>
+ (function() {
+     var $toc = $('#TableOfContents');
+     if ($toc.length > 0) {
+         var $window = $(window);
+
+         function onScroll(){
+             var currentScroll = $window.scrollTop();
+             var h = $('.body h1, .body h2, .body h3, .body h4, .body h5, .body h6');
+             var id = "";
+             h.each(function (i, e) {
+                 e = $(e);
+                 if (e.offset().top - 10 <= currentScroll) {
+                     id = e.attr('id');
+                 }
+             });
+             var current = $toc.find('a.current');
+             if (current.length == 1 && current.eq(0).attr('href') == '#' + id) return true;
+
+             current.each(function (i, e) {
+                 $(e).removeClass('current').siblings('ul').hide();
+             });
+             $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+                 $(e).children('a').addClass('current').siblings('ul').show();
+             });
+         }
+
+         $window.on('scroll', onScroll);
+         $(document).ready(function() {
+             $toc.find('a').parent('li').find('ul').hide();
+             onScroll();
+             document.getElementsByClassName('toc')[0].style.display = '';
+         });
+     }
+ })();
+</script>
+
+                        
+
+			
+
+<h1>Adding new Indicators</h1>
+
+<div>
+    
+    
+    
+    <span class="author">&mdash;
+        
+            Stefan Lendl
+        
+    </span>
+
 
 
     
-  <div class="container" role="main">
-    <article class="article" class="blog-post">
-      
-    <h2 id="indicator-definitions">Indicator Definitions</h2>
+
+    <div class="clear-float"></div>
+    
+    <div class="clear-float"></div>
+</div>
+
+<div class="post">
+    
+
+    <h2 id="indicator-definitions">Indicator Definitions&nbsp;<a class="headline-hash" href="#indicator-definitions">#</a> </h2>
 <p>The Indicators descriptions are defined with yaml config files in the
 config directory. <code>/nnfx/config/indicator/{function}/{indicator}.yaml</code></p>
 <p>The <em>function</em> of the indicator referres to it&rsquo;s function within the
 algorithm. Like <em>confirmation</em>, <em>exit</em>, <em>baseline</em>, &hellip;</p>
 <p>Example config for <em>ASH</em>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: ash
-<span style="color:#66d9ef">filename</span>: ASH
-<span style="color:#66d9ef">class</span>: ZeroLineCross
-<span style="color:#66d9ef">inputs</span>:
-    - - <span style="color:#ae81ff">9.0</span>
-      - <span style="color:#ae81ff">4.0</span>
-      - <span style="color:#ae81ff">20.0</span>
-      - <span style="color:#ae81ff">1.0</span>
-    - - <span style="color:#ae81ff">2.0</span>
-      - <span style="color:#ae81ff">0.0</span>
-      - <span style="color:#ae81ff">10.0</span>
-      - <span style="color:#ae81ff">1.0</span>
-    - - <span style="color:#ae81ff">0.0</span>
-      - <span style="color:#ae81ff">0.0</span>
-      - <span style="color:#ae81ff">1.0</span>
-      - <span style="color:#ae81ff">1.0</span>
-    - - <span style="color:#ae81ff">0.0</span>
-      - <span style="color:#ae81ff">0.0</span>
-      - <span style="color:#ae81ff">3.0</span>
-      - <span style="color:#ae81ff">1.0</span>
-    - - <span style="color:#ae81ff">0.0</span>
-      - <span style="color:#ae81ff">0.0</span>
-      - <span style="color:#ae81ff">6.0</span>
-      - <span style="color:#ae81ff">1.0</span>
-<span style="color:#66d9ef">buffers</span>:
-  - <span style="color:#ae81ff">0</span>
-<span style="color:#66d9ef">shift</span>: <span style="color:#ae81ff">0</span>
-</code></pre></div><table>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>ash<span class="w">
+</span><span class="w"></span><span class="k">filename</span><span class="p">:</span><span class="w"> </span>ASH<span class="w">
+</span><span class="w"></span><span class="k">class</span><span class="p">:</span><span class="w"> </span>ZeroLineCross<span class="w">
+</span><span class="w"></span><span class="k">inputs</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- - <span class="m">9.0</span><span class="w">
+</span><span class="w">      </span>- <span class="m">4.0</span><span class="w">
+</span><span class="w">      </span>- <span class="m">20.0</span><span class="w">
+</span><span class="w">      </span>- <span class="m">1.0</span><span class="w">
+</span><span class="w">    </span>- - <span class="m">2.0</span><span class="w">
+</span><span class="w">      </span>- <span class="m">0.0</span><span class="w">
+</span><span class="w">      </span>- <span class="m">10.0</span><span class="w">
+</span><span class="w">      </span>- <span class="m">1.0</span><span class="w">
+</span><span class="w">    </span>- - <span class="m">0.0</span><span class="w">
+</span><span class="w">      </span>- <span class="m">0.0</span><span class="w">
+</span><span class="w">      </span>- <span class="m">1.0</span><span class="w">
+</span><span class="w">      </span>- <span class="m">1.0</span><span class="w">
+</span><span class="w">    </span>- - <span class="m">0.0</span><span class="w">
+</span><span class="w">      </span>- <span class="m">0.0</span><span class="w">
+</span><span class="w">      </span>- <span class="m">3.0</span><span class="w">
+</span><span class="w">      </span>- <span class="m">1.0</span><span class="w">
+</span><span class="w">    </span>- - <span class="m">0.0</span><span class="w">
+</span><span class="w">      </span>- <span class="m">0.0</span><span class="w">
+</span><span class="w">      </span>- <span class="m">6.0</span><span class="w">
+</span><span class="w">      </span>- <span class="m">1.0</span><span class="w">
+</span><span class="w"></span><span class="k">buffers</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span>- <span class="m">0</span><span class="w">
+</span><span class="w"></span><span class="k">shift</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></code></pre></div><table>
 <thead>
 <tr>
 <th>option</th>
@@ -137,7 +231,7 @@ algorithm. Like <em>confirmation</em>, <em>exit</em>, <em>baseline</em>, &hellip
 </tr>
 </tbody>
 </table>
-<h3 id="indicator-classes">Indicator Classes</h3>
+<h3 id="indicator-classes">Indicator Classes&nbsp;<a class="headline-hash" href="#indicator-classes">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -200,36 +294,53 @@ algorithm. Like <em>confirmation</em>, <em>exit</em>, <em>baseline</em>, &hellip
 </table>
 <p><strong>TODO</strong> not complete list -&gt; write a more detailed description of each of
 the classes</p>
-<h3 id="inputs">Inputs</h3>
+<h3 id="inputs">Inputs&nbsp;<a class="headline-hash" href="#inputs">#</a> </h3>
 <p>Each indicator has a number of input parameters</p>
+
+
+
 <figure>
-    <img src="/ox-hugo/ash_inputs.png"
-         alt="Figure 1: ash\_inputs"/> <figcaption>
-            <p>Figure 1: ash\_inputs</p>
-        </figcaption>
+    
+        <img src="/ox-hugo/ash_inputs.png"
+             alt="
+                       Figure 1: ash\_inputs
+                  "/>
+        
+        
+            <figcaption>
+                
+                <p>
+                    Figure 1: ash\_inputs
+                    
+                        
+                        </p>
+                
+            </figcaption>
+        
 </figure>
 
+
 <p>These Inputs are defined in the source of the indicator</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    input uint                 InpPeriod         <span style="color:#f92672">=</span>  <span style="color:#ae81ff">9</span>;             <span style="color:#75715e">// Period
-</span><span style="color:#75715e"></span>    input uint                 InpPeriodSm       <span style="color:#f92672">=</span>  <span style="color:#ae81ff">2</span>;             <span style="color:#75715e">// Smoothing
-</span><span style="color:#75715e"></span>    input ENUM_MODE            InpMode           <span style="color:#f92672">=</span>  MODE_RSI;      <span style="color:#75715e">// Mode
-</span><span style="color:#75715e"></span>    input ENUM_MA_METHOD       InpMethod         <span style="color:#f92672">=</span>  MODE_SMA;      <span style="color:#75715e">// Method
-</span><span style="color:#75715e"></span>    input ENUM_APPLIED_PRICE   InpAppliedPrice   <span style="color:#f92672">=</span>  PRICE_CLOSE;   <span style="color:#75715e">// Applied price
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++">    <span class="n">input</span> <span class="n">uint</span>                 <span class="n">InpPeriod</span>         <span class="o">=</span>  <span class="mi">9</span><span class="p">;</span>             <span class="c1">// Period
+</span><span class="c1"></span>    <span class="n">input</span> <span class="n">uint</span>                 <span class="n">InpPeriodSm</span>       <span class="o">=</span>  <span class="mi">2</span><span class="p">;</span>             <span class="c1">// Smoothing
+</span><span class="c1"></span>    <span class="n">input</span> <span class="n">ENUM_MODE</span>            <span class="n">InpMode</span>           <span class="o">=</span>  <span class="n">MODE_RSI</span><span class="p">;</span>      <span class="c1">// Mode
+</span><span class="c1"></span>    <span class="n">input</span> <span class="n">ENUM_MA_METHOD</span>       <span class="n">InpMethod</span>         <span class="o">=</span>  <span class="n">MODE_SMA</span><span class="p">;</span>      <span class="c1">// Method
+</span><span class="c1"></span>    <span class="n">input</span> <span class="n">ENUM_APPLIED_PRICE</span>   <span class="n">InpAppliedPrice</span>   <span class="o">=</span>  <span class="n">PRICE_CLOSE</span><span class="p">;</span>   <span class="c1">// Applied price
 </span></code></pre></div><p>In the yaml file the inputs are structured as follows and in this case
 define the <code>InpPeriod</code> from ASH with default value of 9. For the
 optimization process values starting at 4 until 20 are considered with a
 stepping of 1.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">        - - <span style="color:#ae81ff">9.0</span>    <span style="color:#75715e"># default value</span>
-          - <span style="color:#ae81ff">4.0</span>    <span style="color:#75715e"># start value</span>
-          - <span style="color:#ae81ff">20.0</span>   <span style="color:#75715e"># end value</span>
-          - <span style="color:#ae81ff">1.0</span>    <span style="color:#75715e"># step</span>
-</code></pre></div><p>The indicators are structured as a 2D array <code>[[], [], ..]</code> The first <code>-</code>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="w">        </span>- - <span class="m">9.0</span><span class="w">    </span><span class="c"># default value</span><span class="w">
+</span><span class="w">          </span>- <span class="m">4.0</span><span class="w">    </span><span class="c"># start value</span><span class="w">
+</span><span class="w">          </span>- <span class="m">20.0</span><span class="w">   </span><span class="c"># end value</span><span class="w">
+</span><span class="w">          </span>- <span class="m">1.0</span><span class="w">    </span><span class="c"># step</span><span class="w">
+</span></code></pre></div><p>The indicators are structured as a 2D array <code>[[], [], ..]</code> The first <code>-</code>
 indicates the index in the outer array, and the 4x <code>-</code> define the value
 and ranges of the input.</p>
 <p>In order to get the inputs into the yaml file I usually copy the inputs
 from the mq5 file, comment them out in the yaml file and add the inputs
 definition in between.</p>
-<h4 id="enumerations">Enumerations</h4>
+<h4 id="enumerations">Enumerations&nbsp;<a class="headline-hash" href="#enumerations">#</a> </h4>
 <p>Enum types can be used as integer values. For example
 <code>ENUM_APPLIED_PRICE</code> has possible values 0 - 6.</p>
 <table>
@@ -255,64 +366,102 @@ definition in between.</p>
 </tbody>
 </table>
 <p>Other enums like <code>ENUM_MODE</code> are typically defined in the code</p>
-<h3 id="buffers">Buffers</h3>
+<h3 id="buffers">Buffers&nbsp;<a class="headline-hash" href="#buffers">#</a> </h3>
 <p>The buffers refer to the index or indices of the internal buffer of the
 indicator. For example ash has 7 internal buffers which is uses to for
 temporary values.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    SetIndexBuffer(<span style="color:#ae81ff">0</span>,BufferASH,INDICATOR_DATA);                  <span style="color:#75715e">// &lt;-- we are interested in this value
-</span><span style="color:#75715e"></span>    SetIndexBuffer(<span style="color:#ae81ff">1</span>,BufferColors,INDICATOR_COLOR_INDEX);
-    SetIndexBuffer(<span style="color:#ae81ff">2</span>,BufferBL,INDICATOR_CALCULATIONS);
-    SetIndexBuffer(<span style="color:#ae81ff">3</span>,BufferBR,INDICATOR_CALCULATIONS);
-    SetIndexBuffer(<span style="color:#ae81ff">4</span>,BufferAvgBL,INDICATOR_CALCULATIONS);
-    SetIndexBuffer(<span style="color:#ae81ff">5</span>,BufferAvgBR,INDICATOR_CALCULATIONS);
-    SetIndexBuffer(<span style="color:#ae81ff">6</span>,BufferAvgSmBL,INDICATOR_CALCULATIONS);
-    SetIndexBuffer(<span style="color:#ae81ff">7</span>,BufferAvgSmBR,INDICATOR_CALCULATIONS);
-    SetIndexBuffer(<span style="color:#ae81ff">8</span>,BufferMA,INDICATOR_CALCULATIONS);
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++">    <span class="n">SetIndexBuffer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">BufferASH</span><span class="p">,</span><span class="n">INDICATOR_DATA</span><span class="p">);</span>                  <span class="c1">// &lt;-- we are interested in this value
+</span><span class="c1"></span>    <span class="n">SetIndexBuffer</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">BufferColors</span><span class="p">,</span><span class="n">INDICATOR_COLOR_INDEX</span><span class="p">);</span>
+    <span class="n">SetIndexBuffer</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">BufferBL</span><span class="p">,</span><span class="n">INDICATOR_CALCULATIONS</span><span class="p">);</span>
+    <span class="n">SetIndexBuffer</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">BufferBR</span><span class="p">,</span><span class="n">INDICATOR_CALCULATIONS</span><span class="p">);</span>
+    <span class="n">SetIndexBuffer</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">BufferAvgBL</span><span class="p">,</span><span class="n">INDICATOR_CALCULATIONS</span><span class="p">);</span>
+    <span class="n">SetIndexBuffer</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="n">BufferAvgBR</span><span class="p">,</span><span class="n">INDICATOR_CALCULATIONS</span><span class="p">);</span>
+    <span class="n">SetIndexBuffer</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">BufferAvgSmBL</span><span class="p">,</span><span class="n">INDICATOR_CALCULATIONS</span><span class="p">);</span>
+    <span class="n">SetIndexBuffer</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="n">BufferAvgSmBR</span><span class="p">,</span><span class="n">INDICATOR_CALCULATIONS</span><span class="p">);</span>
+    <span class="n">SetIndexBuffer</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="n">BufferMA</span><span class="p">,</span><span class="n">INDICATOR_CALCULATIONS</span><span class="p">);</span>
 </code></pre></div><p>In this case index 0 is the value that is drawn to the chart and is the
 value we are interested in. In the buffers section in the yaml file 0 is
 inserted.</p>
 <p>For indicators of the TwoLinesCross class two buffers need to be
 inserted. For example the Ultra Trend indicator (ut) uses buffers 2 and
 4 for the up and the down line.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#66d9ef">buffers</span>:
-      - <span style="color:#ae81ff">2</span>
-      - <span style="color:#ae81ff">4</span>
-</code></pre></div><p>This needs to be figured out by looking at the code and trying a visual
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="w">    </span><span class="k">buffers</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="m">2</span><span class="w">
+</span><span class="w">      </span>- <span class="m">4</span><span class="w">
+</span></code></pre></div><p>This needs to be figured out by looking at the code and trying a visual
 test run to verify the configuration.</p>
-<h3 id="params">Params</h3>
+<h3 id="params">Params&nbsp;<a class="headline-hash" href="#params">#</a> </h3>
 <p>The params are defined according to the indicator class.</p>
 
 
-
-      
-    </article>
-    
-    
-      
-      
 </div>
 
-    <footer>
-  <div class="container">
-    <p class="credits copyright">
-      <a href="about">Stefan Lendl</a>
-      &nbsp;&copy;
-      0001
 
-      
-        &nbsp;/&nbsp;
-        <a href="">Documentation for backtestd</a>
-      
 
-      &nbsp;&ndash;&nbsp;
-      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+			
+			
+		    </div>
+		</div>
+	    </div>
 
-      <p class="credits theme-by">
-        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
-      </p>
-    </p>
-  </div>
-</footer>
+	    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+    <div class="sphinxsidebarwrapper">
+        <p class="logo">
+            <a href="">
+                <img class="logo" src="/favicon.ico" alt="Logo"/>
+                
+                <br />
+                <span class="logo logo-name">Backtestd</span>
+            </a>
+        </p>
 
-  </body>
+        <p class="blurb">Documentation for the automated optimization pipeline</p>
+        
+
+        
+    
+
+    
+        <iframe src="https://ghbtns.com/github-btn.html?user=stfl&repo=backtestd-doc&type=watch&count=true&size=large"
+                style="border: 0; overflow: hidden;" width="200" height="35"
+                sandbox="allow-scripts allow-popups"></iframe>
+        
+    
+
+    
+
+    
+
+
+        
+
+        
+
+
+        
+
+    </div>
+</div>
+<div class="clearer"></div>
+
+	    <div class="footer">
+    
+        
+            This site is generated using
+        
+        <a href="https://gohugo.io/">Hugo 0.74.3</a>
+	&plus; <a href="https://github.com/kaushalmodi/hugo-onyx-theme">Onyx</a>
+    
+</div>
+
+
+
+
+	    
+
+            
+
+	    
+	</div>
+    </body>
 </html>

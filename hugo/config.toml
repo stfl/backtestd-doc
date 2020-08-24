@@ -10,6 +10,7 @@ pygmentsUseClasses = true       # This applies to Chroma too.
 
 enableEmoji = true
 
+disableKinds = ["taxonomy", "taxonomyTerm"]
 LanguageCode = "en-us" # Used in RSS generation
 
 [markup]
@@ -19,6 +20,22 @@ LanguageCode = "en-us" # Used in RSS generation
 
 [Author]
   name = "Stefan Lendl"
+
+# [caches]
+#   [caches.getjson]
+#     dir = ":cacheDir/:project"
+#     maxAge = "1m" # Disable caching getJSON data
+
+# [Permalinks]
+#   # post = "/:year/:month/:title/"
+#   # Below, we have
+#   #   foo = "bar"
+#   # where foo = section name without double quotes for which we want to have
+#   # the custom permalinks. If foo is 'posts', it will apply to content in
+#   # content/posts/ dir. The "bar" portion is how you want the links to look.
+#   # https://gohugo.io/content-management/urls/#permalink-configuration-values
+#   doc = "/doc/:filename/"
+#   test = "/test/:slug/"
 
 [params]
   name = "Backtestd"

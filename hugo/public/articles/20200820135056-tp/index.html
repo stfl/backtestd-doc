@@ -1,71 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-<title>Take Profit</title>
-
-
-  
-
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="alternate" type="application/rss+xml" href="index.xml" title="Documentation for backtestd">
-
-<link id="dark-mode-theme" rel="stylesheet" href="css/dark.css" />
-<link rel="stylesheet" href="fontawesome/css/all.min.css" />
-
-<script src="js/bundle.js"></script>
-<script src="js/instantpage.js" type="module" defer></script>
-<meta name="generator" content="Hugo 0.68.3" />
-  </head>
-  <body>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
     
-  
-
-
-
-
-  <header>
-    <nav class="navbar">
-  <div class="nav">
+    
     
 
-    <ul class="nav-links">
-      
-        
-          <li><a href="/tags" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
-        
-      
-        
-          <li><a href="/categories" name="Category"><i class="fas fa-folder-open fa-lg"></i></a></li>
-        
-      
-        
-          <li><a href="/search" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
-        
-      
-    </ul>
-  </div>
-</nav>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
 
-    <div class="intro-header">
-      <div class="container">
-        <div class="articles-heading">
-          
-            <h1>Take Profit</h1>
-          
-          
-        </div>
-      </div>
-    </div>
-  </header>
+    
+    <meta name="referrer" content="no-referrer">
+
+    
+        <meta name="description" content="Documentation for the automated optimization pipeline">
+    
+
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    <title>Take Profit &mdash; Backtestd documentation</title>
+
+    <link rel="stylesheet" href="/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="/css/onyx.css" type="text/css" />
+
+    
+        <link rel="stylesheet" href="/css/github_chroma.css">
+    
+
+    
+
+    
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    
+
+    
+
+    
+    
+<meta property="og:title" content="Take Profit" />
+<meta property="og:description"
+      content="Definition at Babypips In this system, a take profit {TP} is set at \(Entry &#43; ATR\) 1 for long trades and Entry - ATR for short trades &amp;#x21a9;&amp;#xfe0e; " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/articles/20200820135056-tp/" />
 
 
     
-  <div class="container" role="main">
-    <article class="article" class="blog-post">
-      
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Take Profit"/>
+<meta name="twitter:description" content="Definition at Babypips In this system, a take profit {TP} is set at \(Entry &#43; ATR\) 1 for long trades and Entry - ATR for short trades &amp;#x21a9;&amp;#xfe0e; "/>
+
+</head>
+
+    <body>
+	<div class="document">
+	    <div class="documentwrapper">
+		<div class="bodywrapper">
+		    <div class="body">
+                        
+                            
+                                <div class="toc">
+                                    <nav id="TableOfContents"></nav>
+                                    <a href="#" class="back-to-top">Back to top</a>
+                                </div>
+                            
+                            <script src="js/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+
+<script>
+ (function() {
+     var $toc = $('#TableOfContents');
+     if ($toc.length > 0) {
+         var $window = $(window);
+
+         function onScroll(){
+             var currentScroll = $window.scrollTop();
+             var h = $('.body h1, .body h2, .body h3, .body h4, .body h5, .body h6');
+             var id = "";
+             h.each(function (i, e) {
+                 e = $(e);
+                 if (e.offset().top - 10 <= currentScroll) {
+                     id = e.attr('id');
+                 }
+             });
+             var current = $toc.find('a.current');
+             if (current.length == 1 && current.eq(0).attr('href') == '#' + id) return true;
+
+             current.each(function (i, e) {
+                 $(e).removeClass('current').siblings('ul').hide();
+             });
+             $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+                 $(e).children('a').addClass('current').siblings('ul').show();
+             });
+         }
+
+         $window.on('scroll', onScroll);
+         $(document).ready(function() {
+             $toc.find('a').parent('li').find('ul').hide();
+             onScroll();
+             document.getElementsByClassName('toc')[0].style.display = '';
+         });
+     }
+ })();
+</script>
+
+                        
+
+			
+
+<h1>Take Profit</h1>
+
+<div>
+    
+    
+    
+    <span class="author">&mdash;
+        
+            Stefan Lendl
+        
+    </span>
+
+
+
+    
+
+    <div class="clear-float"></div>
+    
+    <div class="clear-float"></div>
+</div>
+
+<div class="post">
+    
+
     <p><a href="https://www.babypips.com/forexpedia/take-profit">Definition at Babypips</a></p>
 <p>In this system, a take profit {TP} is set at \(Entry + ATR\) <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <section class="footnotes" role="doc-endnotes">
@@ -78,36 +159,74 @@
 </section>
 
 
-
-      
-    </article>
-    
-    
-      
-      
 </div>
 
-    <footer>
-  <div class="container">
-    <p class="credits copyright">
-      <a href="about">Stefan Lendl</a>
-      &nbsp;&copy;
-      0001
 
-      
-        &nbsp;/&nbsp;
-        <a href="">Documentation for backtestd</a>
-      
 
-      &nbsp;&ndash;&nbsp;
-      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+			
+			
+		    </div>
+		</div>
+	    </div>
 
-      <p class="credits theme-by">
-        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
-      </p>
-    </p>
-  </div>
-</footer>
+	    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+    <div class="sphinxsidebarwrapper">
+        <p class="logo">
+            <a href="">
+                <img class="logo" src="/favicon.ico" alt="Logo"/>
+                
+                <br />
+                <span class="logo logo-name">Backtestd</span>
+            </a>
+        </p>
 
-  </body>
+        <p class="blurb">Documentation for the automated optimization pipeline</p>
+        
+
+        
+    
+
+    
+        <iframe src="https://ghbtns.com/github-btn.html?user=stfl&repo=backtestd-doc&type=watch&count=true&size=large"
+                style="border: 0; overflow: hidden;" width="200" height="35"
+                sandbox="allow-scripts allow-popups"></iframe>
+        
+    
+
+    
+
+    
+
+
+        
+
+        
+
+
+        
+
+    </div>
+</div>
+<div class="clearer"></div>
+
+	    <div class="footer">
+    
+        
+            This site is generated using
+        
+        <a href="https://gohugo.io/">Hugo 0.74.3</a>
+	&plus; <a href="https://github.com/kaushalmodi/hugo-onyx-theme">Onyx</a>
+    
+</div>
+
+
+
+
+	    
+
+            
+
+	    
+	</div>
+    </body>
 </html>
