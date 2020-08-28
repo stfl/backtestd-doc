@@ -1,0 +1,15 @@
+#+TITLE: backtestd-doc
+
+* Purpose
+* Contribution
+** Installation
+** Org-mode to markdown
+
+ox-hugo
+
+** markdown to html
+
+#+BEGIN_SRC bash
+cd hugo
+hugo -D -b "https://stfl.github.io/backtestd-doc/" -d ../docs
+#+END_SRC
