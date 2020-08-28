@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+    
+    
+    
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+
+    
+    <meta name="referrer" content="no-referrer">
+
+    
+        <meta name="description" content="Documentation for the automated optimization pipeline">
+    
+
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    <title>K-Ratio &mdash; Backtestd documentation</title>
+
+    <link rel="stylesheet" href="/backtestd-doc/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="/backtestd-doc/css/onyx.css" type="text/css" />
+
+    
+        <link rel="stylesheet" href="/backtestd-doc/css/github_chroma.css">
+    
+
+    
+
+    
+        <link rel="shortcut icon" href="/backtestd-doc/favicon.ico" type="image/x-icon"/>
+    
+
+    
+
+    
+    
+<meta property="og:title" content="K-Ratio" />
+<meta property="og:description"
+      content="Kestner (2003) The K-Ratio is a statistical metric with an emphasis on consistency of returns, introduced by Lars Kestner in 1996 [1]. It has since then also been adapted by Zephyr Associates under the name &amp;ldquo;Zephyr K-Ratio&amp;rdquo; [2]. Having multiple different Equity curves, yielding the same amount of profit, the K-Ratio will prefer the curve with the most consistent gains (maximum smoothness). Naturally, most investors also prefer a smooth equity curve over higher profits with deeper drawdowns.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://stfl.github.io/backtestd-doc/articles/k-ratio/" />
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="K-Ratio"/>
+<meta name="twitter:description" content="Kestner (2003) The K-Ratio is a statistical metric with an emphasis on consistency of returns, introduced by Lars Kestner in 1996 [1]. It has since then also been adapted by Zephyr Associates under the name &amp;ldquo;Zephyr K-Ratio&amp;rdquo; [2]. Having multiple different Equity curves, yielding the same amount of profit, the K-Ratio will prefer the curve with the most consistent gains (maximum smoothness). Naturally, most investors also prefer a smooth equity curve over higher profits with deeper drawdowns.
+"/>
+
+</head>
+
+    <body>
+	<div class="document">
+	    <div class="documentwrapper">
+		<div class="bodywrapper">
+		    <div class="body">
+                        
+                            
+                                <div class="toc">
+                                    <nav id="TableOfContents"></nav>
+                                    <a href="#" class="back-to-top">Back to top</a>
+                                </div>
+                            
+                            <script src="https://stfl.github.io/backtestd-doc/js/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+
+<script>
+ (function() {
+     var $toc = $('#TableOfContents');
+     if ($toc.length > 0) {
+         var $window = $(window);
+
+         function onScroll(){
+             var currentScroll = $window.scrollTop();
+             var h = $('.body h1, .body h2, .body h3, .body h4, .body h5, .body h6');
+             var id = "";
+             h.each(function (i, e) {
+                 e = $(e);
+                 if (e.offset().top - 10 <= currentScroll) {
+                     id = e.attr('id');
+                 }
+             });
+             var current = $toc.find('a.current');
+             if (current.length == 1 && current.eq(0).attr('href') == '#' + id) return true;
+
+             current.each(function (i, e) {
+                 $(e).removeClass('current').siblings('ul').hide();
+             });
+             $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+                 $(e).children('a').addClass('current').siblings('ul').show();
+             });
+         }
+
+         $window.on('scroll', onScroll);
+         $(document).ready(function() {
+             $toc.find('a').parent('li').find('ul').hide();
+             onScroll();
+             document.getElementsByClassName('toc')[0].style.display = '';
+         });
+     }
+ })();
+</script>
+
+                        
+
+			
+
+<h1>K-Ratio</h1>
+
+<div>
+    
+    
+    
+    <span class="author">&mdash;
+        
+            Stefan Lendl
+        
+    </span>
+
+
+
+    
+
+    <div class="clear-float"></div>
+    
+    <div class="clear-float"></div>
+</div>
+
+<div class="post">
+    
+
+    <p>Kestner (2003)</p>
+<blockquote>
+<p>The K-Ratio is a statistical metric with an emphasis on consistency of
+returns, introduced by Lars Kestner in 1996 [1]. It has since then
+also been adapted by Zephyr Associates under the name &ldquo;Zephyr K-Ratio&rdquo;
+[2]. Having multiple different Equity curves, yielding the same amount
+of profit, the K-Ratio will prefer the curve with the most consistent
+gains (maximum smoothness).<br />
+Naturally, most investors also prefer a smooth equity curve over
+higher profits with deeper drawdowns. So the K-Ratio seems a promising
+metric to use for our optimization process. The k-ratio is defined as:</p>
+</blockquote>
+<p><a href="https://community.darwinex.com/t/equity-curve-straigthness-optimization-with-metatrader/3976">https://community.darwinex.com/t/equity-curve-straigthness-optimization-with-metatrader/3976</a></p>
+<p><a href="https://latex.codecogs.com/png.latex?%5Ctextit%7B%5Ctextbf%7B%5Csmall&amp;space;KRatio%7D%7D&amp;space;=&amp;space;%5Cfrac%7BSlope&amp;space;Regression&amp;space;Line%7D%7BStandard&amp;space;Error&amp;space;Regression&amp;space;Line%7D">https://latex.codecogs.com/png.latex?%5Ctextit%7B%5Ctextbf%7B%5Csmall&amp;space;KRatio%7D%7D&amp;space;=&amp;space;%5Cfrac%7BSlope&amp;space;Regression&amp;space;Line%7D%7BStandard&amp;space;Error&amp;space;Regression&amp;space;Line%7D</a></p>
+<p><a href="https://www.investopedia.com/terms/k/kratio.asp">K-Ratio Definition</a></p>
+
+
+</div>
+
+
+
+			
+			
+		    </div>
+		</div>
+	    </div>
+
+	    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+    <div class="sphinxsidebarwrapper">
+        <p class="logo">
+            <a href="https://stfl.github.io/backtestd-doc/">
+                <img class="logo" src="/backtestd-doc/favicon.ico" alt="Logo"/>
+                
+                <br />
+                <span class="logo logo-name">Backtestd</span>
+            </a>
+        </p>
+
+        <p class="blurb">Documentation for the automated optimization pipeline</p>
+        
+
+        
+    
+
+    
+        <iframe src="https://ghbtns.com/github-btn.html?user=stfl&repo=backtestd-doc&type=watch&count=true&size=large"
+                style="border: 0; overflow: hidden;" width="200" height="35"
+                sandbox="allow-scripts allow-popups"></iframe>
+        
+    
+
+    
+
+    
+
+
+        
+
+        
+
+
+        
+
+    </div>
+</div>
+<div class="clearer"></div>
+
+	    <div class="footer">
+    
+        
+            This site is generated using
+        
+        <a href="https://gohugo.io/">Hugo 0.74.3</a>
+	&plus; <a href="https://github.com/kaushalmodi/hugo-onyx-theme">Onyx</a>
+    
+</div>
+
+
+
+
+	    
+
+            
+
+	    
+	</div>
+    </body>
+</html>

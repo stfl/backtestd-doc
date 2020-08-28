@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+    
+    
+    
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+
+    
+    <meta name="referrer" content="no-referrer">
+
+    
+        <meta name="description" content="Documentation for the automated optimization pipeline">
+    
+
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    <title>Optimization Procedure &mdash; Backtestd documentation</title>
+
+    <link rel="stylesheet" href="/backtestd-doc/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="/backtestd-doc/css/onyx.css" type="text/css" />
+
+    
+        <link rel="stylesheet" href="/backtestd-doc/css/github_chroma.css">
+    
+
+    
+
+    
+        <link rel="shortcut icon" href="/backtestd-doc/favicon.ico" type="image/x-icon"/>
+    
+
+    
+
+    
+    
+<meta property="og:title" content="Optimization Procedure" />
+<meta property="og:description"
+      content="The optimization procedure in this system defines the process of finding a profitable configuration for the system according to the given algortihm rules. TODO Backtesting in Metatrader 5 New Indicators The optimization starts with adding and testing new indicators to calculate the metric for a range of Input Parameters. In order to filter (reduce) the result for further processing we analyze the results. The resulting configurations is referred to as Sliced Indicator Set.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://stfl.github.io/backtestd-doc/articles/optimization-procedure/" />
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Optimization Procedure"/>
+<meta name="twitter:description" content="The optimization procedure in this system defines the process of finding a profitable configuration for the system according to the given algortihm rules. TODO Backtesting in Metatrader 5 New Indicators The optimization starts with adding and testing new indicators to calculate the metric for a range of Input Parameters. In order to filter (reduce) the result for further processing we analyze the results. The resulting configurations is referred to as Sliced Indicator Set.
+"/>
+
+</head>
+
+    <body>
+	<div class="document">
+	    <div class="documentwrapper">
+		<div class="bodywrapper">
+		    <div class="body">
+                        
+                            
+                                <div class="toc">
+                                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#backtesting-in-metatrader-5"><span class="org-todo todo TODO">TODO</span> Backtesting in Metatrader 5</a></li>
+    <li><a href="#new-indicators">New Indicators</a></li>
+    <li><a href="#continuous-optimization">Continuous Optimization</a></li>
+    <li><a href="#forward-testing">Forward Testing</a></li>
+    <li><a href="#building-a-track-record">Building a Track Record</a></li>
+  </ul>
+</nav>
+                                    <a href="#" class="back-to-top">Back to top</a>
+                                </div>
+                            
+                            <script src="https://stfl.github.io/backtestd-doc/js/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+
+<script>
+ (function() {
+     var $toc = $('#TableOfContents');
+     if ($toc.length > 0) {
+         var $window = $(window);
+
+         function onScroll(){
+             var currentScroll = $window.scrollTop();
+             var h = $('.body h1, .body h2, .body h3, .body h4, .body h5, .body h6');
+             var id = "";
+             h.each(function (i, e) {
+                 e = $(e);
+                 if (e.offset().top - 10 <= currentScroll) {
+                     id = e.attr('id');
+                 }
+             });
+             var current = $toc.find('a.current');
+             if (current.length == 1 && current.eq(0).attr('href') == '#' + id) return true;
+
+             current.each(function (i, e) {
+                 $(e).removeClass('current').siblings('ul').hide();
+             });
+             $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+                 $(e).children('a').addClass('current').siblings('ul').show();
+             });
+         }
+
+         $window.on('scroll', onScroll);
+         $(document).ready(function() {
+             $toc.find('a').parent('li').find('ul').hide();
+             onScroll();
+             document.getElementsByClassName('toc')[0].style.display = '';
+         });
+     }
+ })();
+</script>
+
+                        
+
+			
+
+<h1>Optimization Procedure</h1>
+
+<div>
+    
+    
+    
+    <span class="author">&mdash;
+        
+            Stefan Lendl
+        
+    </span>
+
+
+
+    
+
+    <div class="clear-float"></div>
+    
+    <div class="clear-float"></div>
+</div>
+
+<div class="post">
+    
+
+    <p>The optimization procedure in this system defines the process of finding a
+profitable configuration for the system according to the given <a href="/backtestd-doc/articles/algorithm-rules/">algortihm rules</a>.</p>
+<h2 id="backtesting-in-metatrader-5"><span class="org-todo todo TODO">TODO</span> Backtesting in Metatrader 5&nbsp;<a class="headline-hash" href="#backtesting-in-metatrader-5">#</a> </h2>
+<h2 id="new-indicators">New Indicators&nbsp;<a class="headline-hash" href="#new-indicators">#</a> </h2>
+<p>The optimization starts with <a href="/backtestd-doc/articles/adding-new-indicators/">adding</a> and <a href="/backtestd-doc/articles/testing-new-indicators/">testing new indicators</a> to calculate the
+<a href="/backtestd-doc/articles/metrics/">metric</a> for a range of <a href="/backtestd-doc/articles/input-parameters/">Input Parameters</a>. In order to filter <a href="/backtestd-doc/articles/reducing-the-result-set/">(reduce)</a> the result
+for further processing we <a href="/backtestd-doc/articles/analyzing-results/">analyze the results</a>. The resulting configurations is
+referred to as <a href="/backtestd-doc/articles/sliced-indicator-set/">Sliced Indicator Set</a>.</p>
+<h2 id="continuous-optimization">Continuous Optimization&nbsp;<a class="headline-hash" href="#continuous-optimization">#</a> </h2>
+<p>From the previously gathered sliced indi set configs multiple candidates are
+<a href="/backtestd-doc/articles/indicator-selection/">selected</a> - based on a
+<a href="/backtestd-doc/articles/metrics/">metric</a> - and <a href="/backtestd-doc/articles/combination-of-indicators/#combining">combined</a> to breed a new indi set for further
+backtesting. This process runs automatically and is based on principales of a
+<a href="https://en.wikipedia.org/wiki/Genetic%5Falgorithm">genetic algorithm</a>.
+Progressively the the number of assigned functions in the indi set will grow
+until all functions are assigned.</p>
+<h2 id="forward-testing">Forward Testing&nbsp;<a class="headline-hash" href="#forward-testing">#</a> </h2>
+<p>After we find a suitable indicator set with all functions assigned we select a
+<a href="/backtestd-doc/articles/input-parameters/#Concrete Indicator Set">Input Parameters</a> and forward test the configuration for a certain period
+of time until we are conviced that the configuration is acceptable. Forward
+testing is performed on a demo account of a broker of choice.</p>
+<h2 id="building-a-track-record">Building a Track Record&nbsp;<a class="headline-hash" href="#building-a-track-record">#</a> </h2>
+<p>In order to monetize the signals from the algorithm it is important to generate
+a record of actual trades either on a demo account or a real-money account. The
+results from forward testing may be used as track record as well.</p>
+
+
+</div>
+
+
+
+			
+			
+		    </div>
+		</div>
+	    </div>
+
+	    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+    <div class="sphinxsidebarwrapper">
+        <p class="logo">
+            <a href="https://stfl.github.io/backtestd-doc/">
+                <img class="logo" src="/backtestd-doc/favicon.ico" alt="Logo"/>
+                
+                <br />
+                <span class="logo logo-name">Backtestd</span>
+            </a>
+        </p>
+
+        <p class="blurb">Documentation for the automated optimization pipeline</p>
+        
+
+        
+    
+
+    
+        <iframe src="https://ghbtns.com/github-btn.html?user=stfl&repo=backtestd-doc&type=watch&count=true&size=large"
+                style="border: 0; overflow: hidden;" width="200" height="35"
+                sandbox="allow-scripts allow-popups"></iframe>
+        
+    
+
+    
+
+    
+
+
+        
+
+        
+
+
+        
+
+    </div>
+</div>
+<div class="clearer"></div>
+
+	    <div class="footer">
+    
+        
+            This site is generated using
+        
+        <a href="https://gohugo.io/">Hugo 0.74.3</a>
+	&plus; <a href="https://github.com/kaushalmodi/hugo-onyx-theme">Onyx</a>
+    
+</div>
+
+
+
+
+	    
+
+            
+
+	    
+	</div>
+    </body>
+</html>

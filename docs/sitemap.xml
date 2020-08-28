@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/adding-new-indicators/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/algorithm/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/algorithm-rules/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/analyzing-results/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/average-true-range-atr/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/combination-of-indicators/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/hit-miss-ratio/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/indicator-function/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/indicator-selection/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/indicator-set/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/20200820171402-side/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/indicator/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/input-parameters/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/k-ratio/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/metrics/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/optimization-procedure/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/parameter-optimization/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/profit-factor/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/20200820135757-random_indicator/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/reducing-the-result-set/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/signal/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/sliced-indicator-set/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/20200820155536-standard_deviation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/20200820135056-tp/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/testing-new-indicators/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stfl.github.io/backtestd-doc/articles/vp/</loc>
+  </url>
+  
+</urlset>

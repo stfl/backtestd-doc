@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+    
+    
+    
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+
+    
+    <meta name="referrer" content="no-referrer">
+
+    
+        <meta name="description" content="Documentation for the automated optimization pipeline">
+    
+
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    <title>Reducing the result set &mdash; Backtestd documentation</title>
+
+    <link rel="stylesheet" href="/backtestd-doc/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="/backtestd-doc/css/onyx.css" type="text/css" />
+
+    
+        <link rel="stylesheet" href="/backtestd-doc/css/github_chroma.css">
+    
+
+    
+
+    
+        <link rel="shortcut icon" href="/backtestd-doc/favicon.ico" type="image/x-icon"/>
+    
+
+    
+
+    
+    
+<meta property="og:title" content="Reducing the result set" />
+<meta property="og:description"
+      content="Reducing n n is the number of values of a single input parameter. /The lengths of the input sets are obviously not all the same but for O() notation this does not matter./ The size of n is defined by the number of possible values. The range, describing this has a start, a stop and a step value. If we reduce the move start and stop closer together. In case of a continuous input parameter the step value can be increased.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://stfl.github.io/backtestd-doc/articles/reducing-the-result-set/" />
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reducing the result set"/>
+<meta name="twitter:description" content="Reducing n n is the number of values of a single input parameter. /The lengths of the input sets are obviously not all the same but for O() notation this does not matter./ The size of n is defined by the number of possible values. The range, describing this has a start, a stop and a step value. If we reduce the move start and stop closer together. In case of a continuous input parameter the step value can be increased.
+"/>
+
+</head>
+
+    <body>
+	<div class="document">
+	    <div class="documentwrapper">
+		<div class="bodywrapper">
+		    <div class="body">
+                        
+                            
+                                <div class="toc">
+                                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#reducing-n">Reducing n</a></li>
+    <li><a href="#reducing-m">Reducing m</a></li>
+    <li><a href="#reducing-p">Reducing p</a></li>
+    <li><a href="#reduction-procedure">Reduction Procedure</a></li>
+  </ul>
+</nav>
+                                    <a href="#" class="back-to-top">Back to top</a>
+                                </div>
+                            
+                            <script src="https://stfl.github.io/backtestd-doc/js/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+
+<script>
+ (function() {
+     var $toc = $('#TableOfContents');
+     if ($toc.length > 0) {
+         var $window = $(window);
+
+         function onScroll(){
+             var currentScroll = $window.scrollTop();
+             var h = $('.body h1, .body h2, .body h3, .body h4, .body h5, .body h6');
+             var id = "";
+             h.each(function (i, e) {
+                 e = $(e);
+                 if (e.offset().top - 10 <= currentScroll) {
+                     id = e.attr('id');
+                 }
+             });
+             var current = $toc.find('a.current');
+             if (current.length == 1 && current.eq(0).attr('href') == '#' + id) return true;
+
+             current.each(function (i, e) {
+                 $(e).removeClass('current').siblings('ul').hide();
+             });
+             $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+                 $(e).children('a').addClass('current').siblings('ul').show();
+             });
+         }
+
+         $window.on('scroll', onScroll);
+         $(document).ready(function() {
+             $toc.find('a').parent('li').find('ul').hide();
+             onScroll();
+             document.getElementsByClassName('toc')[0].style.display = '';
+         });
+     }
+ })();
+</script>
+
+                        
+
+			
+
+<h1>Reducing the result set</h1>
+
+<div>
+    
+    
+    
+    <span class="author">&mdash;
+        
+            Stefan Lendl
+        
+    </span>
+
+
+
+    
+
+    <div class="clear-float"></div>
+    
+    <div class="clear-float"></div>
+</div>
+
+<div class="post">
+    
+
+    <h2 id="reducing-n">Reducing n&nbsp;<a class="headline-hash" href="#reducing-n">#</a> </h2>
+<p><em>n</em> is the number of values of a single input parameter. /The lengths of
+the input sets are obviously not all the same but for O() notation this
+does not matter./</p>
+<p>The size of <em>n</em> is defined by the number of possible values. The range,
+describing this has a start, a stop and a step value.</p>
+<ul>
+<li>If we reduce the move start and stop closer together.</li>
+<li>In case of a continuous input parameter the step value can be
+increased.</li>
+</ul>
+<h2 id="reducing-m">Reducing m&nbsp;<a class="headline-hash" href="#reducing-m">#</a> </h2>
+<p>The number of free (variable) inputs can be reduces by setting inputs to
+a fixed value.</p>
+<p>Reducing the length of an input range to 1.</p>
+<h2 id="reducing-p">Reducing p&nbsp;<a class="headline-hash" href="#reducing-p">#</a> </h2>
+<p>The number of input indicators in a indicator set has a significant
+impact of the search space.</p>
+<p>Ideally each indicator is tested individually.</p>
+<h2 id="reduction-procedure">Reduction Procedure&nbsp;<a class="headline-hash" href="#reduction-procedure">#</a> </h2>
+<ul>
+<li>Testing a single indicator with an appropriate size of the search
+space.</li>
+<li>Reducing the indicators <em>n</em> and <em>m</em> by analyzing the results.
+Segmenting (Slicing) the search space of the indicator.</li>
+<li>Using the segmented indicator input space to combine with another
+indicator</li>
+<li>Segment and reduce the search space of the combination (indicator set)
+by analyzing the result space.</li>
+<li>Combine the indicator set with yet another indicator</li>
+<li>&hellip; continue until all functions of the algorithm are filled</li>
+</ul>
+<p>This procedure is a tree search. depth-first or breadth-first search is
+possible.</p>
+<p>This ensures that <em>n</em> and <em>m</em> are continuously reduced and non-relevant
+input parameters are not considered in the following rounds.</p>
+<p>Each tested indicator or indicator set may have multiple configurations
+that can be used for combinations.</p>
+<p>For example an indicator with a single input may have good results at a
+range of <code>[3, 8]</code> as well as <code>[14, 19]</code>. Both ranges may be used to
+combine with another indicator.</p>
+<ul>
+<li>continue with a genetic algorithm to breed between the leafs of the
+search tree</li>
+</ul>
+
+
+</div>
+
+
+
+			
+			
+		    </div>
+		</div>
+	    </div>
+
+	    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+    <div class="sphinxsidebarwrapper">
+        <p class="logo">
+            <a href="https://stfl.github.io/backtestd-doc/">
+                <img class="logo" src="/backtestd-doc/favicon.ico" alt="Logo"/>
+                
+                <br />
+                <span class="logo logo-name">Backtestd</span>
+            </a>
+        </p>
+
+        <p class="blurb">Documentation for the automated optimization pipeline</p>
+        
+
+        
+    
+
+    
+        <iframe src="https://ghbtns.com/github-btn.html?user=stfl&repo=backtestd-doc&type=watch&count=true&size=large"
+                style="border: 0; overflow: hidden;" width="200" height="35"
+                sandbox="allow-scripts allow-popups"></iframe>
+        
+    
+
+    
+
+    
+
+
+        
+
+        
+
+
+        
+
+    </div>
+</div>
+<div class="clearer"></div>
+
+	    <div class="footer">
+    
+        
+            This site is generated using
+        
+        <a href="https://gohugo.io/">Hugo 0.74.3</a>
+	&plus; <a href="https://github.com/kaushalmodi/hugo-onyx-theme">Onyx</a>
+    
+</div>
+
+
+
+
+	    
+
+            
+
+	    
+	</div>
+    </body>
+</html>

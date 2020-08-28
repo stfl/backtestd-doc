@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+    
+    
+    
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+
+    
+    <meta name="referrer" content="no-referrer">
+
+    
+        <meta name="description" content="Documentation for the automated optimization pipeline">
+    
+
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    <title>Indicator Side &mdash; Backtestd documentation</title>
+
+    <link rel="stylesheet" href="/backtestd-doc/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="/backtestd-doc/css/onyx.css" type="text/css" />
+
+    
+        <link rel="stylesheet" href="/backtestd-doc/css/github_chroma.css">
+    
+
+    
+
+    
+        <link rel="shortcut icon" href="/backtestd-doc/favicon.ico" type="image/x-icon"/>
+    
+
+    
+
+    
+    
+<meta property="og:title" content="Indicator Side" />
+<meta property="og:description"
+      content="Indicator Side At any given time an indicator has a side that indicates long, short or neutral. Typically if the last signal was a long signal the side of this indicator is long until the indicator gives a signal in the oposite direction. Same for short signals. Some indicators also describe a neutral state. Examples With a Two Lines Cross indicator with an up and a down line, the side is simply which line has the higher value.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://stfl.github.io/backtestd-doc/articles/20200820171402-side/" />
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Indicator Side"/>
+<meta name="twitter:description" content="Indicator Side At any given time an indicator has a side that indicates long, short or neutral. Typically if the last signal was a long signal the side of this indicator is long until the indicator gives a signal in the oposite direction. Same for short signals. Some indicators also describe a neutral state. Examples With a Two Lines Cross indicator with an up and a down line, the side is simply which line has the higher value.
+"/>
+
+</head>
+
+    <body>
+	<div class="document">
+	    <div class="documentwrapper">
+		<div class="bodywrapper">
+		    <div class="body">
+                        
+                            
+                                <div class="toc">
+                                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#indicator-side">Indicator Side</a>
+      <ul>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                                    <a href="#" class="back-to-top">Back to top</a>
+                                </div>
+                            
+                            <script src="https://stfl.github.io/backtestd-doc/js/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+
+<script>
+ (function() {
+     var $toc = $('#TableOfContents');
+     if ($toc.length > 0) {
+         var $window = $(window);
+
+         function onScroll(){
+             var currentScroll = $window.scrollTop();
+             var h = $('.body h1, .body h2, .body h3, .body h4, .body h5, .body h6');
+             var id = "";
+             h.each(function (i, e) {
+                 e = $(e);
+                 if (e.offset().top - 10 <= currentScroll) {
+                     id = e.attr('id');
+                 }
+             });
+             var current = $toc.find('a.current');
+             if (current.length == 1 && current.eq(0).attr('href') == '#' + id) return true;
+
+             current.each(function (i, e) {
+                 $(e).removeClass('current').siblings('ul').hide();
+             });
+             $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+                 $(e).children('a').addClass('current').siblings('ul').show();
+             });
+         }
+
+         $window.on('scroll', onScroll);
+         $(document).ready(function() {
+             $toc.find('a').parent('li').find('ul').hide();
+             onScroll();
+             document.getElementsByClassName('toc')[0].style.display = '';
+         });
+     }
+ })();
+</script>
+
+                        
+
+			
+
+<h1>Indicator Side</h1>
+
+<div>
+    
+    
+    
+    <span class="author">&mdash;
+        
+            Stefan Lendl
+        
+    </span>
+
+
+
+    
+
+    <div class="clear-float"></div>
+    
+    <div class="clear-float"></div>
+</div>
+
+<div class="post">
+    
+
+    <h2 id="indicator-side">Indicator Side&nbsp;<a class="headline-hash" href="#indicator-side">#</a> </h2>
+<p>At any given time an <a href="/backtestd-doc/articles/indicator/">indicator</a> has a side that indicates <strong>long, short or
+neutral</strong>.</p>
+<p>Typically if the last signal was a long <a href="/backtestd-doc/articles/signal/">signal</a> the side of this indicator is
+long until the indicator gives a signal in the oposite direction. Same for short
+signals.</p>
+<p>Some indicators also describe a neutral state.</p>
+<h3 id="examples">Examples&nbsp;<a class="headline-hash" href="#examples">#</a> </h3>
+<p>With a Two Lines Cross indicator with an up and a down line, the side is simply
+which line has the higher value.</p>
+
+
+</div>
+
+
+
+			
+			
+		    </div>
+		</div>
+	    </div>
+
+	    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+    <div class="sphinxsidebarwrapper">
+        <p class="logo">
+            <a href="https://stfl.github.io/backtestd-doc/">
+                <img class="logo" src="/backtestd-doc/favicon.ico" alt="Logo"/>
+                
+                <br />
+                <span class="logo logo-name">Backtestd</span>
+            </a>
+        </p>
+
+        <p class="blurb">Documentation for the automated optimization pipeline</p>
+        
+
+        
+    
+
+    
+        <iframe src="https://ghbtns.com/github-btn.html?user=stfl&repo=backtestd-doc&type=watch&count=true&size=large"
+                style="border: 0; overflow: hidden;" width="200" height="35"
+                sandbox="allow-scripts allow-popups"></iframe>
+        
+    
+
+    
+
+    
+
+
+        
+
+        
+
+
+        
+
+    </div>
+</div>
+<div class="clearer"></div>
+
+	    <div class="footer">
+    
+        
+            This site is generated using
+        
+        <a href="https://gohugo.io/">Hugo 0.74.3</a>
+	&plus; <a href="https://github.com/kaushalmodi/hugo-onyx-theme">Onyx</a>
+    
+</div>
+
+
+
+
+	    
+
+            
+
+	    
+	</div>
+    </body>
+</html>
