@@ -6,9 +6,10 @@ After a new indicator is defined in the system it shall be tested.
 Testing means calculating the fitness function ([[file:../Metrics/Metrics.org][metric]]) for each input
 parameter set.
 
-The current implementation plan is to process all possible input
-parameters. This has $O(n^m)$. $n$ possible values per input. $m$
-different free inputs.
+The current implementation plan is to process as many input parameters as
+possible for a single indicator and [[file:Reducing the result set.org][reduce]] the input parameter space in the next
+stage. To calculate the metric for an indicator with $m$ different free inputs
+and $n$ possible values per input has a complexity[fn:big-o] of $O(n^m)$.
 
 If an indicator has 10k input parameter and it is combined with another
 indicator of also 10k inputs the resulting search space is $10k^2 = 100M$
@@ -20,5 +21,6 @@ indicators in the combined indicator set.
 The result will be a table with maybe 100k rows. One row for each
 possible input combination with the resulting metrics.
 
-In order to reduce the search space it is necessary to [[file:Reducing the
-result set.org][Reducing the result set]]
+In order to reduce the search space it is necessary to [[file:Reducing the result set.org][Reducing the result set]]
+
+[fn:big-o] The complexity of an algorithm is often expressed using [[https://en.wikipedia.org/wiki/Big_O_notation][big O notation]]
