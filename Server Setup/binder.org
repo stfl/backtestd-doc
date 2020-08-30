@@ -1,0 +1,10 @@
+#+TITLE: Binder
+
+[[https://mybinder.org/][Binder]]
+
+#+BEGIN_QUOTE
+With Binder, open those notebooks in an executable environment, making your code
+immediately reproducible by anyone, anywhere
+#+END_QUOTE
+
+* TODO try Binder for collaboration

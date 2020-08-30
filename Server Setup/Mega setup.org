@@ -1,0 +1,21 @@
+#+TITLE: MEGA.nz setup
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
+
+MEGA.nz is a filesharing provider which offers 50GB free storage and allows
+syncing multiple directories at arbitrary locations.
+
+* Download MEGASync
+
+https://mega.nz/sync
+
+* Setup Syncs
+:PROPERTIES:
+:CUSTOM_ID: mega-sync-dirs
+:ID:       f30c403f-8f09-4176-afc8-520961a4d000
+:END:
+
+| Local Folder                                                            | MEGA Folder              | Purpose          |
+|-------------------------------------------------------------------------+--------------------------+------------------|
+| =/home/stefan/work/nnfx/reports=                                        | =/nnfx/reports/{Stefan}= | Test Run results |
+| =/home/stefan/.wine/drive_c/Program Files/MetaTrader 5/MQL5/Indicators= | =/nnfx/Indicators=       | MT5 Indicators   |

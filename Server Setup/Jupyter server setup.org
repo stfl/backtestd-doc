@@ -1,0 +1,88 @@
+#+title: Jupyter Server Setup
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
+
+#+BEGIN_QUOTE
+The [[https://jupyter.org/][Jupyter]] Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more.
+#+END_QUOTE
+
+* Anaconder LXC Container
+
+The Anaconda Container needs to be priviliged to enable CIFS mount from
+the Win10 vm.
+
+** user account
+:PROPERTIES:
+:CUSTOM_ID: user-account
+:END:
+
+#+BEGIN_SRC sh
+adduser condor
+usermod -aG sudo condor
+#+END_SRC
+
+** install anaconda
+   :PROPERTIES:
+   :CUSTOM_ID: install-anaconda
+   :END:
+
+login as condor
+
+[[https://www.digitalocean.com/community/tutorials/how-to-install-the-anaconda-python-distribution-on-ubuntu-20-04-de][Installieren der Anaconda Python-Distribution unter Ubuntu 20.04 | DigitalOcean]]
+
+#+BEGIN_SRC sh
+curl https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh --output anaconda.sh
+sha256sum anaconda.sh
+
+# 2b9f088b2022edb474915d9f69a803d6449d5fdb4c303041f60ac4aefcc208bb  anaconda.sh
+
+bash anaconda.sh
+#+END_SRC
+
+#+BEGIN_SRC sh
+conda install -c pyviz holoviews hvplot panel
+conda install -c plotly plotly
+#+END_SRC
+
+** deploy notebook
+:PROPERTIES:
+:CUSTOM_ID: deploy-notebook
+:END:
+
+#+BEGIN_SRC sh
+sudo apt install git
+#+END_SRC
+
+** setup smb cifs mount
+:PROPERTIES:
+:CUSTOM_ID: setup-smb-cifs-mount
+:ID:       4067a08c-2175-4a17-bf9d-5e1a580c0f8a
+:END:
+
+#+BEGIN_SRC sh
+mkdir /mnt/reports
+chown condor:condor /mnt/reports
+#+END_SRC
+
+test with temp mount
+
+#+BEGIN_SRC bash
+mount -vv -t cifs -o username=Stefan,password=stefan,uid=1000,gid=1000,dir_mode=0755,file_mode=0644 \
+    //192.168.12.23/users /mnt/reports
+#+END_SRC
+
+automount with fstab. assing the condor user to the directory and allow write
+permissions...
+
+#+BEGIN_src fstab
+//192.168.12.61/users/Stefan/AppData/Roaming/MetaQuotes/Terminal/D0E8209F77C8CF37AD8BF550E51FF075/reports /mnt/reports  cifs    defaults,_netdev,nofail,username=Stefan,password=*****,uid=1000,gid=1000,dir_mode=0755,file_mode=0644          0       0
+#+END_src
+
+-> /update password/
+
+check [[file:../20200830101618-infrastructure.org][Infrastructure Description]] for IP address of MT5 Master
+
+** PVE boot order to make smb mount work at boot
+
+- anaconda LXC /order=3/
+- MT5 (Master|Agents) /order=1/

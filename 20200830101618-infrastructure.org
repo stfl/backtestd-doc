@@ -1,0 +1,9 @@
+#+title: Infrastructure Description
+
+| Node Name  | IP            | Description                   |
+|------------+---------------+-------------------------------|
+|            | <l>           |                               |
+| PVE        | 192.168.12.5  | Proxmox Hypervisor            |
+| MT5 Master | 192.168.12.61 |                               |
+| MT5 Agents | 192.168.12.62 |                               |
+| Jupyter    | 192.168.12.4  | Anaconda LXC with Jupyter Lab |

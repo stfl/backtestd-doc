@@ -1,11 +1,10 @@
-* Windows 10 (VM) Setup
-  :PROPERTIES:
-  :CUSTOM_ID: windows-10-vm-setup
-  :END:
+#+TITLE: Windows 10 (VM) Setup
+#+hugo_base_dir: ../hugo
+#+hugo_section: articles
 
 https://davejansen.com/recommended-settings-windows-10-2016-2018-2019-vm-proxmox/
 
-** Drivers
+* Drivers
    :PROPERTIES:
    :CUSTOM_ID: drivers
    :END:
@@ -19,35 +18,37 @@ Virtio driver Disk from RedHat
 
 [[https://www.spice-space.org/download.html][Spice Agent and Drivers]]
 
-*TODO* Launch ballooning ...
+** TODO Launch ballooning ...
 
-** MetaTrader 5
-   :PROPERTIES:
-   :CUSTOM_ID: metatrader-5
-   :END:
+* MetaTrader 5
+:PROPERTIES:
+:CUSTOM_ID: metatrader-5
+:END:
 
-Setup MetaTester agents for all (64) cores
++ Setup MetaTester agents for all (64) cores
++ make sure the network is configured as a *private* network, otherwise the
+  agents won't be discoverable. Or setup the firewall accordingly
 
-** MEGA
-   :PROPERTIES:
-   :CUSTOM_ID: mega
-   :END:
+* MEGA
 
-https://mega.nz/sync
+[[file:Mega setup.org::#mega-sync-dirs][MEGA.nz setup]]
 
-** Samba
-   :PROPERTIES:
-   :CUSTOM_ID: samba
-   :END:
+* Samba
+:PROPERTIES:
+:CUSTOM_ID: samba
+:END:
 
 Enable Network Share for Metrtrader5 Terminal dir.
 
-** Other stuff
-   :PROPERTIES:
-   :CUSTOM_ID: other-stuff
-   :END:
+* Other stuff :ATTACH:
+:PROPERTIES:
+:CUSTOM_ID: other-stuff
+:ID:       5f468d47-6e13-4539-be85-b4687bbe8fb9
+:END:
 
 disable sleep otherwise the VM will go to sleep after 30min :P
+
+[[attachment:_20200830_103818win10_power_settings.png]]
 
 * Benchmarking Win 10 VM disk performance
   :PROPERTIES:
