@@ -21,38 +21,6 @@ adduser condor
 usermod -aG sudo condor
 #+END_SRC
 
-** install anaconda
-   :PROPERTIES:
-   :CUSTOM_ID: install-anaconda
-   :END:
-
-login as condor
-
-[[https://www.digitalocean.com/community/tutorials/how-to-install-the-anaconda-python-distribution-on-ubuntu-20-04-de][Installieren der Anaconda Python-Distribution unter Ubuntu 20.04 | DigitalOcean]]
-
-#+BEGIN_SRC sh
-curl https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh --output anaconda.sh
-sha256sum anaconda.sh
-
-# 2b9f088b2022edb474915d9f69a803d6449d5fdb4c303041f60ac4aefcc208bb  anaconda.sh
-
-bash anaconda.sh
-#+END_SRC
-
-#+BEGIN_SRC sh
-conda install -c pyviz holoviews hvplot panel
-conda install -c plotly plotly
-#+END_SRC
-
-** deploy notebook
-:PROPERTIES:
-:CUSTOM_ID: deploy-notebook
-:END:
-
-#+BEGIN_SRC sh
-sudo apt install git
-#+END_SRC
-
 ** setup smb cifs mount
 :PROPERTIES:
 :CUSTOM_ID: setup-smb-cifs-mount
@@ -86,3 +54,70 @@ check [[file:../20200830101618-infrastructure.org][Infrastructure Description]] 
 
 - anaconda LXC /order=3/
 - MT5 (Master|Agents) /order=1/
+
+** install anaconda
+:PROPERTIES:
+:CUSTOM_ID: install-anaconda
+:END:
+
+login as condor
+
+[[https://www.digitalocean.com/community/tutorials/how-to-install-the-anaconda-python-distribution-on-ubuntu-20-04-de][Installieren der Anaconda Python-Distribution unter Ubuntu 20.04 | DigitalOcean]]
+
+#+BEGIN_SRC sh
+curl https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh --output anaconda.sh
+sha256sum anaconda.sh
+
+# 2b9f088b2022edb474915d9f69a803d6449d5fdb4c303041f60ac4aefcc208bb  anaconda.sh
+
+bash anaconda.sh
+#+END_SRC
+
+** Running Jupyter Lab Server
+
+[[https://jupyter-notebook.readthedocs.io/en/stable/public_server.html][Running a notebook server]]
+
+*** Auto-start with systemd
+
+#+BEGIN_SRC conf
+[Unit]
+After=network.service
+After=mnt-backtestd.mount
+After=mnt-reports.mount
+
+[Service]
+User=condor
+ExecStart=/home/condor/anaconda3/bin/jupyter lab --port=8888 --no-browser --ip=0.0.0.0
+WorkingDirectory=/home/condor/jupyter
+
+[Install]
+WantedBy=default.target
+#+END_SRC
+
+#+BEGIN_SRC bash
+sudo systemctl daemon-reload
+sudo systemctl enable --now jupyter-lab
+#+END_SRC
+
+~http://192.168.12.4:8888/?token=<token>~
+
+*** TODO Password setup
+
+
+* deploy notebook
+:PROPERTIES:
+:CUSTOM_ID: deploy-notebook
+:END:
+
+** Dependencies
+#+BEGIN_SRC sh
+sudo apt install git build-essential
+pip install nbdiff
+#+END_SRC
+
+** Deploy
+
+#+BEGIN_SRC bash
+git clone ...
+#+END_SRC
+
