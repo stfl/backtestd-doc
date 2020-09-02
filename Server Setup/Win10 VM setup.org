@@ -60,3 +60,5 @@ https://bsdio.com/fio/
 #+BEGIN_SRC sh
     fio.exe --time_based --name=benchmark --size=5000M --runtime=30 --ioengine=windowsaio --numjobs=8 --iodepth=8 --rw=randwrite --blocksize=4k --group_reporting --direct=1
 #+END_SRC
+
+* TODO auto-start and auto-restart backtestd.exe

@@ -28,22 +28,32 @@ usermod -aG sudo condor
 :END:
 
 #+BEGIN_SRC sh
-mkdir /mnt/reports
-chown condor:condor /mnt/reports
+mkdir /mnt/workdir
+mkdir /mnt/backtestd
 #+END_SRC
 
-test with temp mount
+manually mount the workdir and apply directory permissions
 
+on dev PC:
 #+BEGIN_SRC bash
-mount -vv -t cifs -o username=Stefan,password=stefan,uid=1000,gid=1000,dir_mode=0755,file_mode=0644 \
-    //192.168.12.23/users /mnt/reports
+sudo mount -vv -t cifs -o -o defaults,_netdev,username=Stefan,password=***,uid=2000,gid=2000,dir_mode=0755,file_mode=0644 \
+    //192.168.12.61/users/Stefan/AppData/Roaming/MetaQuotes/Terminal/D0E8209F77C8CF37AD8BF550E51FF075/ /mnt/workdir
+#+END_SRC
+
+from Anaconda host (/note uid/)
+#+BEGIN_SRC bash
+sudo mount -vv -t cifs -o -o defaults,_netdev,username=Stefan,password=***,uid=1000,gid=1000,dir_mode=0755,file_mode=0644 \
+    //192.168.12.61/users/Stefan/AppData/Roaming/MetaQuotes/Terminal/D0E8209F77C8CF37AD8BF550E51FF075/ /mnt/workdir
 #+END_SRC
 
 automount with fstab. assing the condor user to the directory and allow write
 permissions...
 
-#+BEGIN_src fstab
-//192.168.12.61/users/Stefan/AppData/Roaming/MetaQuotes/Terminal/D0E8209F77C8CF37AD8BF550E51FF075/reports /mnt/reports  cifs    defaults,_netdev,nofail,username=Stefan,password=*****,uid=1000,gid=1000,dir_mode=0755,file_mode=0644          0       0
+~/etc/fstab~
+#+BEGIN_src fstab /etc/fstab
+//192.168.12.61/users/Stefan/AppData/Roaming/MetaQuotes/Terminal/D0E8209F77C8CF37AD8BF550E51FF075/ /mnt/workdir cifs    defaults,_netdev,username=Stefan,password=***,uid=1000,gid=1000,dir_mode=0755,file_mode=0644,noauto,x-systemd.automount,x-systemd.mount-timeout=300          0       0
+
+//192.168.12.61/users/Stefan/AppData/Roaming/MetaQuotes/Terminal/D0E8209F77C8CF37AD8BF550E51FF075/MQL5/Indicators/backtestd /mnt/backtestd      cifs    defaults,_netdev,username=Stefan,password=***,uid=1000,gid=1000,dir_mode=0755,file_mode=0644,noauto,x-systemd.automount,x-systemd.mount-timeout=300          0       0
 #+END_src
 
 -> /update password/
@@ -52,8 +62,10 @@ check [[file:../20200830101618-infrastructure.org][Infrastructure Description]] 
 
 ** PVE boot order to make smb mount work at boot
 
-- anaconda LXC /order=3/
 - MT5 (Master|Agents) /order=1/
+- anaconda LXC /order=3,up=600/
+
+*** TODO test up-delay
 
 ** install anaconda
 :PROPERTIES:
@@ -121,3 +133,9 @@ pip install nbdiff
 git clone ...
 #+END_SRC
 
+
+* deploy backtestd.py
+
+#+BEGIN_SRC bash
+poetry
+#+END_SRC
