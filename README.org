@@ -1,13 +1,10 @@
-#+TITLE: backtestd-doc
-
-* Purpose
+#+TITLE: backtestd Documentation
 
 This are my documentation efforts surrounding various concepts with [[https://github.com/stfl/backtestd][backtestd]] and [[https://github.com/stfl/backtestd-expert][backtestd-expert]]. It is written in Zettelkasten style in org-roam with links connecting the notes.
 
 It is not complete and backtestd is abandoned so it will stay that way.
 
-* Contribution
-** Installation
+* Installation
 ** Org-mode to markdown
 
 with [[https://ox-hugo.scripter.co/][ox-hugo]]
